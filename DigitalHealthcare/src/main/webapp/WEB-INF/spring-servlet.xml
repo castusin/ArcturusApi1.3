@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+  <context:component-scan base-package="com.digitalhealthcare"/>
+   
+    <mvc:annotation-driven />
+      <context:annotation-config />
+    <!-- JSON Support -->
+    <bean name="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+    <bean name="jsonTemplate" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+ 
+	
+	
+	
+	<bean id="sessionHandler" class="com.cis.CISSessionDAO">
+		<property name="dataSource" ref="ds" />
+	</bean>
+	
+	
+	<bean id="getplansDAO" class="com.digitalhealthcare.DigiHealthCareGetPlanDetailsDAO"> 
+ 		<property name="dataSource" ref="ds" /> 
+ 	</bean>
+ 	
+<!-- Development  DB connections     --> 
+
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+<property name="driverClassName" value="com.mysql.jdbc.Driver" />  
+<property name="url" value="jdbc:mysql://204.93.169.64:3306/littlepa_homecare"/>  
+<property name="username" value="littlepa_sm"/>  
+<property name="password" value="password1" />  
+</bean> 
+
+
+
+<!-- Production DB connections     -->
+
+<!--   <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">    -->
+<!--   <property name="driverClassName" value="com.mysql.jdbc.Driver" />    -->
+<!--   <property name="url" value="jdbc:mysql://204.93.169.64:3306/castusin_arcturusdb" />    -->
+<!--   <property name="username" value="castusin_arcturu" />     -->
+<!--   <property name="password" value="arcturus1@3"/>   -->
+<!--   </bean>   -->
+ 
+ 
+ 
+ 
+ 
+<!-- Production DB connections Arcturus main server    -->
+
+<!--   <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">    -->
+<!--   <property name="driverClassName" value="com.mysql.jdbc.Driver" />    -->
+<!--   <property name="url" value="jdbc:mysql://198.38.86.61:3306/mathgato_arcturusdb" />    -->
+<!--   <property name="username" value="mathgato_arcturs" />     -->
+<!--   <property name="password" value="arcturus1@3"/>   -->
+<!--   </bean>   -->
+ 
+ 
+ 
+ 
+ 
+ 
+</beans>
