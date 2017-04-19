@@ -50,7 +50,7 @@ public class DigihealthCareRescheduleBL {
                 "</html>";
 	String subject = "Arcturus";
 	try {
-		 String result = sendMail.sendMailWithAuth("castusinfo.com", "arcturus@castusinfo.com", "arcturus1@3", "25",emailId, msg, subject);
+		 String result = sendMail.sendMailWithAuth("castusinfo.com", "arcturus@castusinfo.com", "arcturus", "25",emailId, msg, subject);
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
