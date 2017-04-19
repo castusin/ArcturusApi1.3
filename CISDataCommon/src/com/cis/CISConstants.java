@@ -48,7 +48,15 @@ public class CISConstants {
 	public static final String AccountType="P";
 	public static final String AccountType2="F";
 	public static final String AdminPhoneNumber="16784621339";
-	public static final String AdminEmailId="asristy@hotmail.com";
+	public static final String AdminEmailId="darshan4solution@gmail.com";
+	public static final String EMAILHOST="castusinfo.com";
+	public static final String EMAILUSERNAME="arcturus@castusinfo.com";
+	public static final String EMAILPASSWORD="arcturus";
+	public static final String PORT="25";
+	public static final String SMS_FAILED = "Sms failed to delivery ";
+	public static final String MAIL_FAILED = "Email failed to delivery ";
+	
+	
 	public CISConstants() {
 		// TODO Auto-generated constructor stub
 	}

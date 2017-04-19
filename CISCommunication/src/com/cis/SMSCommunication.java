@@ -47,10 +47,7 @@ public class SMSCommunication {
                retval += decodedString;
          }
          in.close();
-         System.out.println("SMS STATUS: "+retval);
-	   
-         
-         
+       //  System.out.println("SMS STATUS: "+retval);
          
          // Get Status Of SMS 
          
@@ -121,7 +118,7 @@ public class SMSCommunication {
                retval += decodedString;
          }
          in.close();
-         System.out.println("SMS STATUS: "+retval);
+       //  System.out.println("SMS STATUS: "+retval);
          
 	   	return cisResult;
 	}
@@ -159,8 +156,7 @@ public class SMSCommunication {
                retval += decodedString;
          }
          in.close();
-         System.out.println("SMS STATUS: "+retval);
-         
+       //  System.out.println("SMS STATUS: "+retval);
 	   	return cisResult;
 	}
 	
@@ -198,8 +194,7 @@ public class SMSCommunication {
                retval += decodedString;
          }
          in.close();
-         System.out.println("SMS STATUS: "+retval);
-         
+        // System.out.println("SMS STATUS: "+retval);
 	   	return cisResult;
 	}
 }
