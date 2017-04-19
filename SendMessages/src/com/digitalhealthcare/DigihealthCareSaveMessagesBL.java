@@ -20,7 +20,7 @@ public class DigihealthCareSaveMessagesBL {
 
 	public CISResults sendMessages(String userId,String message) {
 		// TODO Auto-generated method stub
-		 String emailId="udaykatikala@gmail.com";
+		 String emailId="prasad9620@gmail.com";
 		 SMSCommunication smsCommunicaiton=new SMSCommunication();
 		 EmailCommunication sendMail=new EmailCommunication();
 		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
@@ -35,11 +35,8 @@ public class DigihealthCareSaveMessagesBL {
                 "\n" +
                 "<body>\n" +
                  "<p>Arcturus Care </b><br />"+
-                 "<p>Please find  "+userId+""+
-                
                  
-                "<br />\n"+
-                "<p>Please find  "+message+""+
+                "<p>"+message+""+
                  
                 "<br />\n"+
                 "<br />\n"+
@@ -53,7 +50,7 @@ public class DigihealthCareSaveMessagesBL {
                 "</html>";
 	String subject = "Arcturus";
 	 try {
-		 String result = sendMail.sendMailWithAuth("castusinfo.com", "arcturus@mathgator.com", "arcturus1@3", "25",emailId, msg, subject);
+		 String result = sendMail.sendMailWithAuth("castusinfo.com", "arcturus@castusinfo.com", "arcturus1@3", "25",emailId, msg, subject);
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

@@ -137,13 +137,13 @@ public class SMSCommunication {
          String Password = "arcturus1@3";
          String SenderID = "KAPNFO"; 
          String Type="longsms";
-         String Message = "Arcturus : provided message" ;
-         String phoneNumber="9440069067";
+         //String Message = "Arcturus : provided message" ;
+         String phoneNumber="17325800762";
         // Arcturus : John Vonn provided feedback.
        //  http://193.105.74.159/api/v3/sendsms/plain?user=internationalsms&password=HZlGhtj&sender=KAPNFO&SMSText=TEST&type=longsms&GSM=17325800762
          
          postData += "user=" + Username + "&password=" + Password + "&sender=" +           
-        		 SenderID +"&SMSText=" +Message + "&type="+Type+ "&GSM="+phoneNumber;
+        		 SenderID +"&SMSText=" +message + "&type="+Type+ "&GSM="+phoneNumber;
 		 URL url = new URL("http://193.105.74.159/api/v3/sendsms/plain?");
 		 HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
          urlconnection.setRequestMethod("POST");
@@ -176,13 +176,13 @@ public class SMSCommunication {
          String Password = "arcturus1@3";
          String SenderID = "KAPNFO"; 
          String Type="longsms";
-         String Message = "Arcturus : provided message" ;
-         String phoneNumber="9440069067";
+         //String Message = "Arcturus : provided message" ;
+         String phoneNumber="17325800762";
         // Arcturus : John Vonn provided feedback.
        //  http://193.105.74.159/api/v3/sendsms/plain?user=internationalsms&password=HZlGhtj&sender=KAPNFO&SMSText=TEST&type=longsms&GSM=17325800762
          
          postData += "user=" + Username + "&password=" + Password + "&sender=" +           
-        		 SenderID +"&SMSText=" +Message + "&type="+Type+ "&GSM="+phoneNumber;
+        		 SenderID +"&SMSText=" +dateTime + "&type="+Type+ "&GSM="+phoneNumber;
 		 URL url = new URL("http://193.105.74.159/api/v3/sendsms/plain?");
 		 HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
          urlconnection.setRequestMethod("POST");
