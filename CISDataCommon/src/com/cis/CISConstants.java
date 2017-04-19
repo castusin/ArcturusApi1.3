@@ -47,7 +47,8 @@ public class CISConstants {
 	public static final String TYPE="longsms";
 	public static final String AccountType="P";
 	public static final String AccountType2="F";
-
+	public static final String AdminPhoneNumber="16784621339";
+	public static final String AdminEmailId="asristy@hotmail.com";
 	public CISConstants() {
 		// TODO Auto-generated constructor stub
 	}

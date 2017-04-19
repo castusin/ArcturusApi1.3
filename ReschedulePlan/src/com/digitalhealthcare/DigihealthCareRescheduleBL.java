@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.cis.CISConstants;
 import com.cis.CISResults;
 import com.cis.EmailCommunication;
 import com.cis.SMSCommunication;
@@ -20,7 +21,7 @@ public class DigihealthCareRescheduleBL {
 
 	public CISResults reschedulePlan(String userId,String dateTime) {
 		// TODO Auto-generated method stub
-		 String emailId="prasad9620@gmail.com";
+		 String emailId=CISConstants.AdminEmailId;
 		 SMSCommunication smsCommunicaiton=new SMSCommunication();
 		 EmailCommunication sendMail=new EmailCommunication();
 		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);

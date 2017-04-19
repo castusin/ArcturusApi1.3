@@ -133,12 +133,12 @@ public class SMSCommunication {
          
          //KAP SYSTEMS PROVIDERS LOGIN DETAILS DEMO ACCOUNT DETAILS
          // TODO: Remove hard coded data.
-         String Username ="arcturuscare";
-         String Password = "arcturus1@3";
-         String SenderID = "KAPNFO"; 
-         String Type="longsms";
+         String Username =CISConstants.USERNAME;
+         String Password = CISConstants.PASSWORD;
+         String SenderID = CISConstants.SENDERID; 
+         String Type=CISConstants.TYPE;
          //String Message = "Arcturus : provided message" ;
-         String phoneNumber="17325800762";
+         String phoneNumber=CISConstants.AdminPhoneNumber;
         // Arcturus : John Vonn provided feedback.
        //  http://193.105.74.159/api/v3/sendsms/plain?user=internationalsms&password=HZlGhtj&sender=KAPNFO&SMSText=TEST&type=longsms&GSM=17325800762
          
@@ -172,12 +172,12 @@ public class SMSCommunication {
          
          //KAP SYSTEMS PROVIDERS LOGIN DETAILS DEMO ACCOUNT DETAILS
          // TODO: Remove hard coded data.
-         String Username ="arcturuscare";
-         String Password = "arcturus1@3";
-         String SenderID = "KAPNFO"; 
-         String Type="longsms";
+         String Username =CISConstants.USERNAME;
+         String Password = CISConstants.PASSWORD;
+         String SenderID = CISConstants.SENDERID; 
+         String Type=CISConstants.TYPE;
          //String Message = "Arcturus : provided message" ;
-         String phoneNumber="17325800762";
+         String phoneNumber=CISConstants.AdminPhoneNumber;
         // Arcturus : John Vonn provided feedback.
        //  http://193.105.74.159/api/v3/sendsms/plain?user=internationalsms&password=HZlGhtj&sender=KAPNFO&SMSText=TEST&type=longsms&GSM=17325800762
          
