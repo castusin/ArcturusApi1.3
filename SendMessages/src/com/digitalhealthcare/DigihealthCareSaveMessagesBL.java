@@ -30,7 +30,7 @@ public class DigihealthCareSaveMessagesBL {
 		try {
 			cisResult=smsCommunicaiton.sendMessages(userId,message);
 			} catch (Throwable e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 				cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
 				cisResult.setErrorMessage(CISConstants.SMS_FAILED);
