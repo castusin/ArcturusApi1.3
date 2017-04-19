@@ -65,5 +65,15 @@
 			<type>2</type>
 			<location>E:/GitHub/ArcturusApi1.3/GetPlanDetails/src</location>
 		</link>
+		<link>
+			<name>ReschedulePlan</name>
+			<type>2</type>
+			<location>E:/GitHub/ArcturusApi1.3/ReschedulePlan/src</location>
+		</link>
+		<link>
+			<name>SendMessages</name>
+			<type>2</type>
+			<location>E:/GitHub/ArcturusApi1.3/SendMessages/src</location>
+		</link>
 	</linkedResources>
 </projectDescription>

@@ -6,7 +6,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="src" path="ReschedulePlan"/>
 	<classpathentry kind="src" path="GetPlanDetails"/>
+	<classpathentry kind="src" path="SendMessages"/>
 	<classpathentry kind="src" path="CommonCISValidation"/>
 	<classpathentry kind="src" path="CISSessions"/>
 	<classpathentry kind="src" path="CISDataCommon"/>

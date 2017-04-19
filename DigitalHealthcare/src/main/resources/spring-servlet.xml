@@ -25,6 +25,14 @@
  		<property name="dataSource" ref="ds" /> 
  	</bean>
  	
+ 	<bean id="sendMessagesDAO" class="com.digitalhealthcare.DigihealthCareSaveMessagesDAO"> 
+ 		<property name="dataSource" ref="ds" /> 
+ 	</bean>
+ 	
+ 	<bean id="reschedulePlanDAO" class="com.digitalhealthcare.DigihealthCareRescheduleDAO"> 
+ 		<property name="dataSource" ref="ds" /> 
+ 	</bean>
+ 	
 <!-- Development  DB connections     --> 
 
 <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  

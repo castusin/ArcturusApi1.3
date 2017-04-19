@@ -5,11 +5,13 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/GetPlanDetails"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/CommonCISValidation"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/CISSessions"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/CISDataCommon"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/CISCommunication"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SendMessages"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/GetPlanDetails"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ReschedulePlan"/>
         <property name="context-root" value="DigitalHealthcare"/>
         <property name="java-output-path" value="/DigitalHealthcare/target/classes"/>
     </wb-module>
