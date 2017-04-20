@@ -32,7 +32,7 @@ public class DigitalHealthCareGetReschedulePlanDetailsRest {
 	 public String reschedulePlan(@RequestParam ("userId") String userId,@RequestParam ("sessionId") String sessionId,@RequestParam ("dateTime") String dateTime,HttpServletRequest request){
 		    Logger logger = Logger.getLogger(DigitalHealthCareGetPatientPlanDetailsRest.class);
 			String getReschedulePlanDetaisParameters = "userId=" +userId;
-		    logger.info(" DigitalHealthCare:contentData :"+getReschedulePlanDetaisParameters);
+		    logger.info(" DigitalHealthCare:Reschedule plan :"+getReschedulePlanDetaisParameters);
             CommonCISValidation CommonCISValidation=new CommonCISValidation();
 		    CISResults cisResults=CommonCISValidation.getReschedulePlanDetaisValidation(userId,sessionId,dateTime,request);
 		    if(cisResults.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))

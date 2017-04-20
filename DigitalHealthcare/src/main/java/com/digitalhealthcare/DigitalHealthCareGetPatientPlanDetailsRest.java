@@ -34,7 +34,7 @@ public class DigitalHealthCareGetPatientPlanDetailsRest {
 	 public String getPlanDetais(@RequestParam ("userId") String userId,@RequestParam ("sessionId") String sessionId,HttpServletRequest request){
 		    Logger logger = Logger.getLogger(DigitalHealthCareGetPatientPlanDetailsRest.class);
 			String getPlanDetaisParameters = "userId=" +userId;
-		    logger.info(" DigitalHealthCare:contentData :"+getPlanDetaisParameters);
+		    logger.info(" DigitalHealthCare:Get plan details :"+getPlanDetaisParameters);
             CommonCISValidation CommonCISValidation=new CommonCISValidation();
 		    CISResults cisResults=CommonCISValidation.getPlanDetaisValidation(userId,sessionId,request);
 		    if(cisResults.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))

@@ -38,7 +38,7 @@ public class EmailCommunication {
 
                 "</body>\n" +
                 "</html>";
-	String subject = "Arcturus";
+	String subject = CISConstants.SUBJECT;
 	 try {
 		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,emailId, msg, subject);
 	  
@@ -75,7 +75,7 @@ public class EmailCommunication {
 
                 "</body>\n" +
                 "</html>";
-	String subject = "Arcturus";
+	String subject = CISConstants.SUBJECT;
 	 try {
 		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,emailId, msg, subject);
 	  

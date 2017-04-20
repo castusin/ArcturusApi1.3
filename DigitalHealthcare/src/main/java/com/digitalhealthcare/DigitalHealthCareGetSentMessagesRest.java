@@ -32,7 +32,7 @@ public class DigitalHealthCareGetSentMessagesRest {
 	 public String sendMessages(@RequestParam ("userId") String userId,@RequestParam ("sessionId") String sessionId,@RequestParam ("message") String message,HttpServletRequest request){
 		    Logger logger = Logger.getLogger(DigitalHealthCareGetPatientPlanDetailsRest.class);
 			String sentMessageParameters = "userId=" +userId;
-		    logger.info(" DigitalHealthCare:contentData :"+sentMessageParameters);
+		    logger.info(" DigitalHealthCare:Send messages :"+sentMessageParameters);
             CommonCISValidation CommonCISValidation=new CommonCISValidation();
 		    CISResults cisResults=CommonCISValidation.sendMessagesValidation(userId,sessionId,message,request);
 		    if(cisResults.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))

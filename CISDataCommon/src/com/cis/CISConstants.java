@@ -55,6 +55,7 @@ public class CISConstants {
 	public static final String PORT="25";
 	public static final String SMS_FAILED = "Sms failed to delivery ";
 	public static final String MAIL_FAILED = "Email failed to delivery ";
+	public static final String SUBJECT ="Arcturus";
 	
 	
 	public CISConstants() {
