@@ -9,14 +9,17 @@ import java.net.URL;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
 import com.cis.CISResults;
+import com.digitalhealthcare.DigiHealthCareGetPlanDetailsBL;
 
 public class SMSCommunication {
 	public CISResults sendSMS(String phoneNumber,int otpNumber) throws Throwable {
 		// TODO Auto-generated method stub
+		final Logger logger = Logger.getLogger(SMSCommunication.class);
 		CISResults cisResult=new CISResults();
 		String postData="";
          String retval = "";
@@ -49,7 +52,7 @@ public class SMSCommunication {
          }
          in.close();
        //  System.out.println("SMS STATUS: "+retval);
-         
+         logger.info("SMS STATUS: "+retval);  
          // Get Status Of SMS 
          
          DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -88,6 +91,8 @@ public class SMSCommunication {
 	
 	public CISResults sendMessage(String phoneNumber,String firsName,String lastName) throws Throwable {
 		// TODO Auto-generated method stub
+		
+		final Logger logger = Logger.getLogger(SMSCommunication.class);
 		CISResults cisResult=new CISResults();
 		String postData="";
          String retval = "";
@@ -120,12 +125,13 @@ public class SMSCommunication {
                retval += decodedString;
          }
          in.close();
-       //  System.out.println("SMS STATUS: "+retval);
+         logger.info("SMS STATUS: "+retval);  
          
 	   	return cisResult;
 	}
 	public CISResults sendMessages(String userId,String message) throws Throwable {
 		// TODO Auto-generated method stub
+		final Logger logger = Logger.getLogger(SMSCommunication.class);
 		CISResults cisResult=new CISResults();
 		String postData="";
          String retval = "";
@@ -164,6 +170,7 @@ public class SMSCommunication {
 	
 	public CISResults sendMessagesReschedule(String userId,String dateTime) throws Throwable {
 		// TODO Auto-generated method stub
+		final Logger logger = Logger.getLogger(SMSCommunication.class);
 		CISResults cisResult=new CISResults();
 		String postData="";
          String retval = "";
@@ -196,7 +203,7 @@ public class SMSCommunication {
                retval += decodedString;
          }
          in.close();
-        // System.out.println("SMS STATUS: "+retval);
+         logger.info("SMS STATUS: "+retval);  
 	   	return cisResult;
 	}
 }
