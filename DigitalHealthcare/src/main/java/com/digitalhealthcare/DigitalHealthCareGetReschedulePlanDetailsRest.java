@@ -39,7 +39,7 @@ public class DigitalHealthCareGetReschedulePlanDetailsRest {
 		     {
 		    	DigihealthCareRescheduleWebservice rescheduleWebservice= new DigihealthCareRescheduleWebservice();
 		       cisResults  = rescheduleWebservice.reschedulePlan(userId,dateTime);
-		       logger.info(" DigitalHealthCare: getPlandetails :"+cisResults);
+		       logger.info(" DigitalHealthCare: getreschedulePlan details :"+cisResults);
 		     }
 		       return returnJsonData(cisResults);
 	 }

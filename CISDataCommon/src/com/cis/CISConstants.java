@@ -45,10 +45,10 @@ public class CISConstants {
 	public static final String PASSWORD="arcturus1@3";
 	public static final String SENDERID="KAPNFO";
 	public static final String TYPE="longsms";
-	public static final String AccountType="P";
-	public static final String AccountType2="F";
-	public static final String AdminPhoneNumber="16784621339";
-	public static final String AdminEmailId="darshan4solution@gmail.com";
+	public static final String ACCOUNTType="P";
+	public static final String ACCOUNTType2="F";
+	public static final String ADMINPHONENUMBER="16784621339";
+	public static final String ADMINEMAILID="darshan4solution@gmail.com";
 	public static final String EMAILHOST="castusinfo.com";
 	public static final String EMAILUSERNAME="arcturus@castusinfo.com";
 	public static final String EMAILPASSWORD="arcturus";

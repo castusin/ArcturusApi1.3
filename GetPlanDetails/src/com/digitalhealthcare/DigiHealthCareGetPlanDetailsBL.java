@@ -23,7 +23,7 @@ public class DigiHealthCareGetPlanDetailsBL {
 		
 		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
 		CISResults cisResult = getplansDAO.getplanDetaialsData(userId);
-		logger.info("DigitalHealthCare:ProfileDataBL  service" +cisResult );
+		logger.info("DigitalHealthCare:Get plan details  DataBL  service" +cisResult );
 		return cisResult;
 	}
 	

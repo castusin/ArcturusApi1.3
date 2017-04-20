@@ -15,7 +15,7 @@ public class DigihealthCareRescheduleWebservice {
 		DigihealthCareRescheduleBL rescheduleBL = new DigihealthCareRescheduleBL();
 		 Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsWebservice.class);
 		 CISResults cisResult = rescheduleBL.reschedulePlan(userId,dateTime);
-		 logger.info(" DigitalHealthCare: send message details :"+cisResult);
+		 logger.info(" DigitalHealthCare: reschedulePlan details :"+cisResult);
 		return cisResult;
 	}
 

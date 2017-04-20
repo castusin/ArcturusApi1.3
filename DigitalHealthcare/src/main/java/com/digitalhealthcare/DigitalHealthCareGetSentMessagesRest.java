@@ -39,7 +39,7 @@ public class DigitalHealthCareGetSentMessagesRest {
 		     {
 		    	DigihealthCareSaveMessagesWebservice saveMessagesWebservice= new DigihealthCareSaveMessagesWebservice();
 		       cisResults  = saveMessagesWebservice.sendMessages(userId,message);
-		       logger.info(" DigitalHealthCare: getPlandetails :"+cisResults);
+		       logger.info(" DigitalHealthCare: get send message details :"+cisResults);
 		     }
 		       return returnJsonData(cisResults);
 	 }
