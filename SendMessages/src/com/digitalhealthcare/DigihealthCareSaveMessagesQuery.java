@@ -2,7 +2,7 @@ package com.digitalhealthcare;
 
 public class DigihealthCareSaveMessagesQuery {
 	
-	public static final String SQL_PLANSDATA = "select Apt_id,User_id,Apt_person_id,Date_time,Type,Apt_with from Appointments_table where User_id=?";
+	public static final String SQL_SENDMESSAGES = "select Apt_id,Patient_id,User_id,phoneNumber,emailId,Message_text,Create_date from Messages_table where Patient_id=?";
 
 
 }

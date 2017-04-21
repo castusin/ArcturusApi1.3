@@ -144,7 +144,7 @@ public class CommonCISValidation {
 	
 	
 	
-	public CISResults sendMessagesValidation(String userId,String sessionId,String message,HttpServletRequest request) {
+	public CISResults sendMessagesValidation(String userId,String message,HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		CISResults cisResult=new CISResults();
 		CISSessionWebservice cisSessionTime = new CISSessionWebservice();
@@ -172,11 +172,11 @@ public class CommonCISValidation {
 		          } 
 		  }
 	   //Validate Session Time
-		  if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
+		 /* if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 			 {
 		       cisResult  = cisSessionTime.getSessionDetails(userId,sessionId);
 		  
-			 }
+			 }*/
 			return cisResult;
 	}
 }

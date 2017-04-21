@@ -25,8 +25,8 @@ public class DigihealthCareSaveMessagesBL {
 		 SMSCommunication smsCommunicaiton=new SMSCommunication();
 		 EmailCommunication sendMail=new EmailCommunication();
 		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
-		//CISResults cisResult = saveMessagesDAO.sendMessages(userId,message);
-		CISResults cisResult = new CISResults();
+		CISResults cisResult = saveMessagesDAO.sendMessages(userId,message);
+		CISResults cisResults = new CISResults();
 		try {
 			cisResult=smsCommunicaiton.sendMessages(userId,message);
 			} catch (Throwable e) {

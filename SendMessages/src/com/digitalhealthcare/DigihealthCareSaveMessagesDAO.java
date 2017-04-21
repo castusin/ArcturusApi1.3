@@ -31,10 +31,10 @@ public class DigihealthCareSaveMessagesDAO extends JdbcDaoSupport {
 			 TimeCheck time=new TimeCheck();
 			 testServiceTime sessionTimeCheck=new testServiceTime();
 			 String serviceStartTime=time.getTimeZone();
-			 List planDetails=getJdbcTemplate().query(DigihealthCareSaveMessagesQuery.SQL_PLANSDATA,inputs,new DigiHealthCareGetPlanDetailsMapper());
+			 List saveMessages=getJdbcTemplate().query(DigihealthCareSaveMessagesQuery.SQL_SENDMESSAGES,inputs,new DigihealthCareSaveMessagesMapper());
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-			 cisResults.setResultObject(planDetails);
+			 cisResults.setResultObject(saveMessages);
 			 logger.info("Get PlanDetails data query time:: " +result);
 			
 		} catch (DataAccessException e) {
