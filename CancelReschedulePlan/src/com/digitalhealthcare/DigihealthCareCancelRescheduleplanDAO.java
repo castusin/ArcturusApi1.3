@@ -11,7 +11,7 @@ import com.cis.testServiceTime;
 
 public class DigihealthCareCancelRescheduleplanDAO extends JdbcDaoSupport {
 
-	public CISResults reschedulePlan(String messageId, int aptId,
+	public CISResults cancelSchedulePlan(String messageId, int aptId,
 			String patientId, String userId, String phoneNumber,
 			String emailID, String messageText, String createDateTime,
 			String sessionId) {
@@ -24,7 +24,7 @@ public class DigihealthCareCancelRescheduleplanDAO extends JdbcDaoSupport {
 			 TimeCheck time=new TimeCheck();
 			 testServiceTime sessionTimeCheck=new testServiceTime();
 			 String serviceStartTime=time.getTimeZone();
-			getJdbcTemplate().update(DigihealthCareCancelRescheduleplanQuery.SQL_RESCHEDULEPLAN,messageId,aptId,patientId,userId,phoneNumber,emailID,messageText,createDateTime);
+			getJdbcTemplate().update(DigihealthCareCancelRescheduleplanQuery.SQL_CANCELRESCHEDULEPLAN,messageId,aptId,patientId,userId,phoneNumber,emailID,messageText,createDateTime);
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
 			 logger.info("Get PlanDetails data query time:: " +result);
