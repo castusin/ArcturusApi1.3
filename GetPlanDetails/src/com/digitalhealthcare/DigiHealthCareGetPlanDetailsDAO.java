@@ -21,13 +21,13 @@ import com.cis.testServiceTime;
 public class DigiHealthCareGetPlanDetailsDAO extends JdbcDaoSupport {
 
 
-	public CISResults getplanDetaialsData(String userId) {
+	public CISResults getplanDetaialsData(String patientId) {
 		// TODO Auto-generated method stub
 		
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsDAO.class);
-		Object[] inputs = new Object[]{userId};
+		Object[] inputs = new Object[]{patientId};
 		try{
 			// Capture service Start time
 			 TimeCheck time=new TimeCheck();

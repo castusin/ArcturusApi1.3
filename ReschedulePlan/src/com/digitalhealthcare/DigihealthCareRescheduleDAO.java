@@ -1,6 +1,7 @@
 
 package com.digitalhealthcare;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -19,7 +20,7 @@ import com.cis.testServiceTime;
 public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
 
 
-	public CISResults reschedulePlan(String userId,String dateTime) {
+	/*public CISResults reschedulePlan(String userId,Date dateTime) {
 		// TODO Auto-generated method stub
 		
 		CISResults cisResults=new CISResults();
@@ -31,10 +32,35 @@ public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
 			 TimeCheck time=new TimeCheck();
 			 testServiceTime sessionTimeCheck=new testServiceTime();
 			 String serviceStartTime=time.getTimeZone();
-			 List planDetails=getJdbcTemplate().query(DigihealthCareRescheduleQuery.SQL_PLANSDATA,inputs,new DigiHealthCareGetPlanDetailsMapper());
+			getJdbcTemplate().update(DigihealthCareRescheduleQuery.SQL_PLANSDATA,inputs);
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-			 cisResults.setResultObject(planDetails);
+			 logger.info("Get PlanDetails data query time:: " +result);
+			
+		} catch (DataAccessException e) {
+			e.printStackTrace();
+		
+			cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
+			cisResults.setErrorMessage("Failed to get Profile Data");
+		}
+   		return cisResults; 
+	}
+*/
+	public CISResults reschedulePlan(String messageId, int aptId,
+			int patientId, String userId,String phoneNumber, String emailID, String messageText,
+			String createDateTime, String sessionId ) {
+		CISResults cisResults=new CISResults();
+		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		Logger logger = Logger.getLogger(DigihealthCareSaveMessagesDAO.class);
+		//Object[] inputs = new Object[]{userId};
+		try{
+			// Capture service Start time
+			 TimeCheck time=new TimeCheck();
+			 testServiceTime sessionTimeCheck=new testServiceTime();
+			 String serviceStartTime=time.getTimeZone();
+			getJdbcTemplate().update(DigihealthCareRescheduleQuery.SQL_RESCHEDULEPLAN,messageId,aptId,patientId,userId,phoneNumber,emailID,messageText,createDateTime);
+			 String serviceEndTime=time.getTimeZone();
+			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
 			 logger.info("Get PlanDetails data query time:: " +result);
 			
 		} catch (DataAccessException e) {

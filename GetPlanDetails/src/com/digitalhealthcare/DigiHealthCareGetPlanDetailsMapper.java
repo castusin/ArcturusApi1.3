@@ -18,11 +18,16 @@ public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
 	DigihealthCareSavePlanDetailsModel planModel = new DigihealthCareSavePlanDetailsModel();
 	     planModel.setAptId(rs.getInt("Apt_id"));
-	     planModel.setUserId(rs.getString("User_id"));
 	     planModel.setAptPersonId(rs.getInt("Apt_person_id"));
-	     planModel.setAptDate(rs.getTimestamp("Date_time"));
+	     planModel.setPatientId(rs.getString("Patient_id"));
+	     planModel.setStartTime(rs.getString("Apt_starttime"));
+		 planModel.setEndTime(rs.getString("Apt_endtime"));
+		 planModel.setTotalDay(rs.getString("Total_day"));
 		 planModel.setType(rs.getString("Type"));
 		 planModel.setAppWith(rs.getString("Apt_with"));
+	     planModel.setAptDate(rs.getString("Date_time"));
+		
+		
 		return planModel;
 	}
 }

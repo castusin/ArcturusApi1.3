@@ -18,15 +18,20 @@ public class DigihealthCareSavePlanDetailsModel {
 	public String type;
 	public String appWith;
 	public String status;
-	public Timestamp aptDate;
+	public String aptDate;
 	public Date createDate;
+	public String totalDay;
+	public String startTime;
+	public String endTime;
+	public String patientId;
+	
 	
 	
 	
 	
 	public DigihealthCareSavePlanDetailsModel(int aptId, String userId,
 			int aptPersonId, String type, String appWith, String status,
-			Timestamp aptDate, Date createDate) {
+			String aptDate, Date createDate, String startTime, String endTime, String totalDay, String patientId) {
 		super();
 		this.aptId = aptId;
 		this.userId = userId;
@@ -36,13 +41,20 @@ public class DigihealthCareSavePlanDetailsModel {
 		this.status = status;
 		this.aptDate = aptDate;
 		this.createDate = createDate;
+		this.startTime=startTime;
+		this.endTime=endTime;
+		this.totalDay=totalDay;
+		this.patientId=patientId;
 	}
-	public Timestamp getAptDate() {
+	
+	public String getAptDate() {
 		return aptDate;
 	}
-	public void setAptDate(Timestamp aptDate) {
+
+	public void setAptDate(String aptDate) {
 		this.aptDate = aptDate;
 	}
+
 	public int getAptId() {
 		return aptId;
 	}
@@ -67,6 +79,35 @@ public class DigihealthCareSavePlanDetailsModel {
 	
 	
 	
+	public String getPatientId() {
+		return patientId;
+	}
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
+	}
+	public String getTotalDay() {
+		return totalDay;
+	}
+	public void setTotalDay(String totalDay) {
+		this.totalDay = totalDay;
+	}
+	
+	public String getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
 	public void setType(String type) {
 		this.type = type;
 	}

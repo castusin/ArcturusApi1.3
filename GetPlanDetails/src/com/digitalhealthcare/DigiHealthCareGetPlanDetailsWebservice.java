@@ -12,11 +12,11 @@ import com.cis.CISResults;
  */
 public class DigiHealthCareGetPlanDetailsWebservice {
 
-	public CISResults getPlanDetails(String userId) {
+	public CISResults getPlanDetails(String patientId) {
 		// TODO Auto-generated method stub
 		DigiHealthCareGetPlanDetailsBL getplanDetailsBL = new DigiHealthCareGetPlanDetailsBL();
 		 Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsWebservice.class);
-		 CISResults cisResult = getplanDetailsBL.DigiHealthCareGetPlanDetailsBL(userId);
+		 CISResults cisResult = getplanDetailsBL.DigiHealthCareGetPlanDetailsBL(patientId);
 		 logger.info(" DigitalHealthCare: getPlanDetails :"+cisResult);
 		return cisResult;
 	}

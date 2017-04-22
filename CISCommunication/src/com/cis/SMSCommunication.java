@@ -5,6 +5,7 @@ import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Date;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -168,7 +169,7 @@ public class SMSCommunication {
 	   	return cisResult;
 	}
 	
-	public CISResults sendMessagesReschedule(String userId,String dateTime) throws Throwable {
+	public CISResults sendMessagesReschedule(String userId,Date dateTime) throws Throwable {
 		// TODO Auto-generated method stub
 		final Logger logger = Logger.getLogger(SMSCommunication.class);
 		CISResults cisResult=new CISResults();

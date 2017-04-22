@@ -9,6 +9,6 @@ package com.digitalhealthcare;
  */
 public class DigiHealthCareGetPlanDetailsQuery {
 
-	public static final String SQL_PLANSDATA = "select Apt_id,User_id,Apt_person_id,Date_time,Type,Apt_with from Appointments_table where User_id=?";
+	public static final String SQL_PLANSDATA = "select Apt_id,Apt_person_id,Patient_id,Apt_starttime,Apt_endtime,Total_day,Type,Apt_with,Date_time from Appointments_table where Patient_id=?";
 
 }

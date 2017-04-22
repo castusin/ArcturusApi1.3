@@ -1,5 +1,6 @@
 package com.cis;
 
+import java.sql.Date;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -49,7 +50,7 @@ public class EmailCommunication {
 		return cisResult;
 	}
 	
-	public CISResults sendMailDateTime(String dateTime) {
+	public CISResults sendMailDateTime(Date dateTime) {
 		// TODO Auto-generated method stub
 		CISResults cisResult = new CISResults();
 		String emailId=CISConstants.ADMINEMAILID;

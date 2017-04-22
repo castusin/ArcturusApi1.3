@@ -10,11 +10,11 @@ import com.cis.CISResults;
  */
 public class DigihealthCareSaveMessagesWebservice {
 
-	public CISResults sendMessages(String userId,String message) {
+	public CISResults sendMessages(DigihealthCareSaveMessagesModel saveMessages) {
 		// TODO Auto-generated method stub
 		DigihealthCareSaveMessagesBL saveMessagesBL = new DigihealthCareSaveMessagesBL();
 		 Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsWebservice.class);
-		 CISResults cisResult = saveMessagesBL.sendMessages(userId,message);
+		 CISResults cisResult = saveMessagesBL.sendMessages( saveMessages);
 		 logger.info(" DigitalHealthCare: send message details :"+cisResult);
 		return cisResult;
 	}

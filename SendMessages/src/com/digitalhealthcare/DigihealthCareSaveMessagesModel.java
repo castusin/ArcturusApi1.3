@@ -11,20 +11,21 @@ import java.sql.Timestamp;
 public class DigihealthCareSaveMessagesModel {
 
 	public int aptId;
+	
 	public String patientId;
-	public int userId;
+	public String userId;
 	public int phoneNumber;
 	public String emailId;
 	public String messageText;
 	
 	public Date createDate;
+	public String sessionId;
 	
 	
 	
-	
-	public DigihealthCareSaveMessagesModel(int aptId, int userId,
+	public DigihealthCareSaveMessagesModel(int aptId, String userId,
 			int aptPersonId, String type, String appWith, String status,
-			Timestamp aptDate, Date createDate, String patientId, int phoneNumber, String emailId, String messageText) {
+			Timestamp aptDate, Date createDate, String patientId, int phoneNumber, String emailId, String messageText, String sessionId) {
 		super();
 		this.aptId = aptId;
 		this.userId = userId;
@@ -32,7 +33,7 @@ public class DigihealthCareSaveMessagesModel {
 		this.phoneNumber = phoneNumber;
 		this.emailId = emailId;
 		this.messageText = messageText;
-		
+		this.sessionId=sessionId;
 		this.createDate = createDate;
 	}
 	
@@ -52,11 +53,11 @@ public class DigihealthCareSaveMessagesModel {
 		this.patientId = patientId;
 	}
 
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
@@ -91,6 +92,14 @@ public class DigihealthCareSaveMessagesModel {
 		this.createDate = createDate;
 	}
 	
+	public String getSessionId() {
+		return sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+	}
+
 	public DigihealthCareSaveMessagesModel()
 	{}
 }

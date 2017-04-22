@@ -20,9 +20,9 @@ public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 	     
 	     saveMessages.setAptId(rs.getInt("Apt_id"));
 	     saveMessages.setPatientId(rs.getString("Patient_id"));
-	     saveMessages.setUserId(rs.getInt("User_id"));
-	     saveMessages.setPhoneNumber(rs.getInt("phoneNumber"));
-	     saveMessages.setEmailId(rs.getString("emailId"));
+	     saveMessages.setUserId(rs.getString("User_id"));
+	     //saveMessages.setPhoneNumber(rs.getInt("phoneNumber"));
+	    // saveMessages.setEmailId(rs.getString("emailId"));
 	     saveMessages.setMessageText(rs.getString("Message_text"));
 	     saveMessages.setCreateDate(rs.getDate("Create_date"));
 	     

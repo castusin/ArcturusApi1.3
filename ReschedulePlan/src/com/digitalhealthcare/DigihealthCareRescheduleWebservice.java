@@ -10,11 +10,11 @@ import com.cis.CISResults;
  */
 public class DigihealthCareRescheduleWebservice {
 
-	public CISResults reschedulePlan(String userId,String dateTime) {
+	public CISResults reschedulePlan(DigihealthCareRescheduleModel reschedulePlans) {
 		// TODO Auto-generated method stub
 		DigihealthCareRescheduleBL rescheduleBL = new DigihealthCareRescheduleBL();
 		 Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsWebservice.class);
-		 CISResults cisResult = rescheduleBL.reschedulePlan(userId,dateTime);
+		 CISResults cisResult = rescheduleBL.reschedulePlan( reschedulePlans);
 		 logger.info(" DigitalHealthCare: reschedulePlan details :"+cisResult);
 		return cisResult;
 	}

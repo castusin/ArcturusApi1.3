@@ -31,16 +31,16 @@ public class DigitalHealthCareGetPatientPlanDetailsRest {
 	
 	@RequestMapping(value="/getPlanDetais",method=RequestMethod.GET,produces={"application/json"})
 
-	 public String getPlanDetais(@RequestParam ("userId") String userId,@RequestParam ("sessionId") String sessionId,HttpServletRequest request){
+	 public String getPlanDetais(@RequestParam ("patientId") String patientId,HttpServletRequest request){
 		    Logger logger = Logger.getLogger(DigitalHealthCareGetPatientPlanDetailsRest.class);
-			String getPlanDetaisParameters = "userId=" +userId;
+			String getPlanDetaisParameters = "patientId=" +patientId;
 		    logger.info(" DigitalHealthCare:Get plan details :"+getPlanDetaisParameters);
             CommonCISValidation CommonCISValidation=new CommonCISValidation();
-		    CISResults cisResults=CommonCISValidation.getPlanDetaisValidation(userId,sessionId,request);
+		    CISResults cisResults=CommonCISValidation.getPlanDetaisValidation(patientId,request);
 		    if(cisResults.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		     {
 		    	DigiHealthCareGetPlanDetailsWebservice getPlanDetailsWebService= new DigiHealthCareGetPlanDetailsWebservice();
-		       cisResults  = getPlanDetailsWebService.getPlanDetails(userId);
+		       cisResults  = getPlanDetailsWebService.getPlanDetails(patientId);
 		       logger.info(" DigitalHealthCare: getPlandetails :"+cisResults);
 		     }
 		       return returnJsonData(cisResults);
