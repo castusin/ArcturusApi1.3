@@ -25,7 +25,7 @@ public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 		 planModel.setTotalDay(rs.getString("Total_day"));
 		 planModel.setType(rs.getString("Type"));
 		 planModel.setAppWith(rs.getString("Apt_with"));
-	     planModel.setAptDate(rs.getString("Date_time"));
+	    // planModel.setAptDate(rs.getString("Date_time"));
 		
 		
 		return planModel;
