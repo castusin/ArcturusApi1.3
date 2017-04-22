@@ -1,8 +1,4 @@
-
 package com.digitalhealthcare;
-
-import java.sql.Date;
-import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
@@ -13,16 +9,12 @@ import com.cis.CISResults;
 import com.cis.TimeCheck;
 import com.cis.testServiceTime;
 
-/**
- * @author 
- *
- */
-public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
-
+public class DigihealthCareCancelRescheduleplanDAO extends JdbcDaoSupport {
 
 	public CISResults reschedulePlan(String messageId, int aptId,
-			String patientId, String userId,String phoneNumber, String emailID, String messageText,
-			String createDateTime, String sessionId ) {
+			String patientId, String userId, String phoneNumber,
+			String emailID, String messageText, String createDateTime,
+			String sessionId) {
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Logger logger = Logger.getLogger(DigihealthCareSaveMessagesDAO.class);
@@ -32,7 +24,7 @@ public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
 			 TimeCheck time=new TimeCheck();
 			 testServiceTime sessionTimeCheck=new testServiceTime();
 			 String serviceStartTime=time.getTimeZone();
-			getJdbcTemplate().update(DigihealthCareRescheduleQuery.SQL_RESCHEDULEPLAN,messageId,aptId,patientId,userId,phoneNumber,emailID,messageText,createDateTime);
+			getJdbcTemplate().update(DigihealthCareCancelRescheduleplanQuery.SQL_RESCHEDULEPLAN,messageId,aptId,patientId,userId,phoneNumber,emailID,messageText,createDateTime);
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
 			 logger.info("Get PlanDetails data query time:: " +result);
@@ -45,5 +37,6 @@ public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
 		}
    		return cisResults; 
 	}
+
 
 }

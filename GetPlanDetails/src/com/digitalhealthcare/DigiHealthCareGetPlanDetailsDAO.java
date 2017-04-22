@@ -21,7 +21,7 @@ import com.cis.testServiceTime;
 public class DigiHealthCareGetPlanDetailsDAO extends JdbcDaoSupport {
 
 
-	public CISResults getplanDetaialsData(String patientId) {
+	public CISResults getplanDetaialsData(String patientId, String userId) {
 		// TODO Auto-generated method stub
 		
 		CISResults cisResults=new CISResults();

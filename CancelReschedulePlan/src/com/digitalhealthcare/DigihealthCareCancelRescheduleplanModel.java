@@ -1,4 +1,5 @@
 
+
 package com.digitalhealthcare;
 
 import java.sql.Date;
@@ -8,7 +9,7 @@ import java.sql.Timestamp;
  * @author 
  *
  */
-public class DigihealthCareRescheduleModel {
+public class DigihealthCareCancelRescheduleplanModel {
 
 	public int aptId;
 	public String userId;
@@ -22,7 +23,7 @@ public class DigihealthCareRescheduleModel {
 	public Date dateTime;
 	public String sessionId;
 	
-	public DigihealthCareRescheduleModel(int aptId, String userId,
+	public DigihealthCareCancelRescheduleplanModel(int aptId, String userId,
 			
 			 Date createDate, String patientId, String messageText, Date createDateTime, Date dateTime, String sessionId, int phoneNumber, String emailId) {
 		super();
@@ -108,6 +109,6 @@ public class DigihealthCareRescheduleModel {
 		this.dateTime = dateTime;
 	}
 
-	public DigihealthCareRescheduleModel()
+	public DigihealthCareCancelRescheduleplanModel()
 	{}
 }

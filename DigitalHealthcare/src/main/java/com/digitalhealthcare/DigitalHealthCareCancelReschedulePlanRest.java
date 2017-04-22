@@ -16,7 +16,7 @@ import com.google.gson.Gson;
 import com.validation.CommonCISValidation;
 
 /**
- * Rest Controller : Get Reschedule plan details Service
+ * Rest Controller : Get sent messages Service
  * 
  * @author Castus Info Solutions
  * 
@@ -26,21 +26,22 @@ import com.validation.CommonCISValidation;
  * 
  */
 @RestController
-public class DigitalHealthCareGetReschedulePlanDetailsRest {
+public class DigitalHealthCareCancelReschedulePlanRest {
 	
-	@RequestMapping(value="/reschedulePlan",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
 	
-	public String reschedulePlan(HttpServletRequest request,@RequestBody DigihealthCareRescheduleModel reschedulePlans){
-		    Logger logger = Logger.getLogger(DigitalHealthCareGetReschedulePlanDetailsRest.class);
-			/*String getReschedulePlanDetaisParameters = "userId=" +userId;
-		    logger.info(" DigitalHealthCare:Reschedule plan :"+getReschedulePlanDetaisParameters);*/
+	@RequestMapping(value="/cancelSchedulePlan",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
+	
+	public String cancelSchedulePlan(HttpServletRequest request,@RequestBody DigihealthCareCancelRescheduleplanModel cancelSchedulePlan){
+		 
+		Logger logger = Logger.getLogger(DigitalHealthCareCancelReschedulePlanRest.class);
+			
             CommonCISValidation CommonCISValidation=new CommonCISValidation();
-		    CISResults cisResults=CommonCISValidation.getReschedulePlanDetaisValidation(reschedulePlans,request);
+		    CISResults cisResults=CommonCISValidation.cancelSchedulePlanValidation(request,cancelSchedulePlan);
 		    if(cisResults.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		     {
-		    	DigihealthCareRescheduleWebservice rescheduleWebservice= new DigihealthCareRescheduleWebservice();
-		       cisResults  = rescheduleWebservice.reschedulePlan(reschedulePlans);
-		       logger.info(" DigitalHealthCare: getreschedulePlan details :"+cisResults);
+		    	DigihealthCareCancelRescheduleplanWebservice cancelRescheduleplanWebservice= new DigihealthCareCancelRescheduleplanWebservice();
+		       cisResults  = cancelRescheduleplanWebservice.cancelSchedulePlan(cancelSchedulePlan);
+		       logger.info(" DigitalHealthCare: get send message details :"+cisResults);
 		     }
 		       return returnJsonData(cisResults);
 	 }

@@ -15,12 +15,12 @@ public class DigihealthCareSavePlanDetailsModel {
 	public int aptId;
 	public String userId;
 	public int aptPersonId;
-	public String type;
+	public String title;
 	public String appWith;
 	public String status;
 	public String aptDate;
 	public Date createDate;
-	public String totalDay;
+	public String allDay;
 	public String startTime;
 	public String endTime;
 	public String patientId;
@@ -31,19 +31,19 @@ public class DigihealthCareSavePlanDetailsModel {
 	
 	public DigihealthCareSavePlanDetailsModel(int aptId, String userId,
 			int aptPersonId, String type, String appWith, String status,
-			String aptDate, Date createDate, String startTime, String endTime, String totalDay, String patientId) {
+			String aptDate, Date createDate, String startTime, String endTime, String totalDay, String patientId, String allDay, String title) {
 		super();
 		this.aptId = aptId;
 		this.userId = userId;
 		this.aptPersonId = aptPersonId;
-		this.type = type;
+		this.title = title;
 		this.appWith = appWith;
 		this.status = status;
 		this.aptDate = aptDate;
 		this.createDate = createDate;
 		this.startTime=startTime;
 		this.endTime=endTime;
-		this.totalDay=totalDay;
+		this.allDay=allDay;
 		this.patientId=patientId;
 	}
 	
@@ -73,9 +73,6 @@ public class DigihealthCareSavePlanDetailsModel {
 	public void setAptPersonId(int aptPersonId) {
 		this.aptPersonId = aptPersonId;
 	}
-	public String getType() {
-		return type;
-	}
 	
 	
 	
@@ -85,12 +82,7 @@ public class DigihealthCareSavePlanDetailsModel {
 	public void setPatientId(String patientId) {
 		this.patientId = patientId;
 	}
-	public String getTotalDay() {
-		return totalDay;
-	}
-	public void setTotalDay(String totalDay) {
-		this.totalDay = totalDay;
-	}
+	
 	
 	public String getStartTime() {
 		return startTime;
@@ -108,9 +100,23 @@ public class DigihealthCareSavePlanDetailsModel {
 		this.endTime = endTime;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	
+	public String getTitle() {
+		return title;
 	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAllDay() {
+		return allDay;
+	}
+
+	public void setAllDay(String allDay) {
+		this.allDay = allDay;
+	}
+
 	public String getAppWith() {
 		return appWith;
 	}

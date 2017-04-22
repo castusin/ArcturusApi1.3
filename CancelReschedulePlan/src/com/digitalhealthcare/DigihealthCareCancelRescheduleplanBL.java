@@ -19,21 +19,22 @@ import com.cis.TimeCheck;
  * @author 
  *
  */
-public class DigihealthCareRescheduleBL {
+public class DigihealthCareCancelRescheduleplanBL {
 	ApplicationContext ctx=new ClassPathXmlApplicationContext("spring-servlet.xml"); 
-	DigihealthCareRescheduleDAO rescheduleDAO=(DigihealthCareRescheduleDAO)ctx.getBean("reschedulePlanDAO");
+	DigihealthCareCancelRescheduleplanDAO cancelRescheduleplanDAO=(DigihealthCareCancelRescheduleplanDAO)ctx.getBean("CancelreschedulePlanDAO");
 
 
-	public CISResults reschedulePlan(DigihealthCareRescheduleModel reschedulePlans) {
+	public CISResults cancelSchedulePlan(DigihealthCareCancelRescheduleplanModel cancelSchedulePlan) {
 		// TODO Auto-generated method stub
 		
 		 SMSCommunication smsCommunicaiton=new SMSCommunication();
 		 EmailCommunication sendMail=new EmailCommunication();
 		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
 		
-		String userId=reschedulePlans.getUserId();
-		Date dateTime=reschedulePlans.getDateTime();
-		  TimeCheck time=new TimeCheck();
+		  String userId=cancelSchedulePlan.getUserId();
+		  Date dateTime=cancelSchedulePlan.getDateTime();
+		  
+	      TimeCheck time=new TimeCheck();
 	      String createDateTime=time.getTimeZone();
 	      String sessionId = UUID.randomUUID().toString();
 	      String messageId = DigestUtils.sha1Hex(sessionId);
@@ -41,7 +42,7 @@ public class DigihealthCareRescheduleBL {
 	      messageId=upToNCharacters;
 	      String emailID= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
-		CISResults cisResult = rescheduleDAO.reschedulePlan(messageId,reschedulePlans.getAptId(),reschedulePlans.getPatientId(),reschedulePlans.getUserId(),phoneNumber,emailID,reschedulePlans.getMessageText(),createDateTime,sessionId);
+		CISResults cisResult = cancelRescheduleplanDAO.reschedulePlan(messageId,cancelSchedulePlan.getAptId(),cancelSchedulePlan.getPatientId(),cancelSchedulePlan.getUserId(),phoneNumber,emailID,cancelSchedulePlan.getMessageText(),createDateTime,sessionId);
 		
 		try {
 			cisResult=smsCommunicaiton.sendMessagesReschedule(userId,dateTime);

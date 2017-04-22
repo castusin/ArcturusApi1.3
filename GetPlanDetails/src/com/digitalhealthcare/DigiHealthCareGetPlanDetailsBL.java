@@ -18,11 +18,11 @@ public class DigiHealthCareGetPlanDetailsBL {
 	DigiHealthCareGetPlanDetailsDAO getplansDAO=(DigiHealthCareGetPlanDetailsDAO)ctx.getBean("getplansDAO");
 
 
-	public CISResults DigiHealthCareGetPlanDetailsBL(String patientId) {
+	public CISResults DigiHealthCareGetPlanDetailsBL(String patientId, String userId) {
 		// TODO Auto-generated method stub
 		
 		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
-		CISResults cisResult = getplansDAO.getplanDetaialsData(patientId);
+		CISResults cisResult = getplansDAO.getplanDetaialsData(patientId,userId);
 		logger.info("DigitalHealthCare:Get plan details  DataBL  service" +cisResult );
 		return cisResult;
 	}
