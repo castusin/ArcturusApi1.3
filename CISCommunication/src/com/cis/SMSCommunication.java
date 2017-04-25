@@ -169,7 +169,7 @@ public class SMSCommunication {
 	   	return cisResult;
 	}
 	
-	public CISResults sendMessagesReschedule(String userId,Date dateTime) throws Throwable {
+	public CISResults sendMessagesReschedule(String userId,String dateTime) throws Throwable {
 		// TODO Auto-generated method stub
 		final Logger logger = Logger.getLogger(SMSCommunication.class);
 		CISResults cisResult=new CISResults();

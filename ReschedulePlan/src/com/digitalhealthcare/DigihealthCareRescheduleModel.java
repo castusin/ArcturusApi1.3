@@ -19,12 +19,12 @@ public class DigihealthCareRescheduleModel {
 	public String messageText;
 	
 	public Date createDateTime;
-	public Date dateTime;
+	public String dateTime;
 	public String sessionId;
 	
 	public DigihealthCareRescheduleModel(int aptId, String userId,
 			
-			 Date createDate, String patientId, String messageText, Date createDateTime, Date dateTime, String sessionId, int phoneNumber, String emailId) {
+			 Date createDate, String patientId, String messageText, Date createDateTime, String dateTime, String sessionId, int phoneNumber, String emailId) {
 		super();
 		this.aptId = aptId;
 		this.userId = userId;
@@ -100,11 +100,13 @@ public class DigihealthCareRescheduleModel {
 		this.createDateTime = createDateTime;
 	}
 
-	public Date getDateTime() {
+	
+
+	public String getDateTime() {
 		return dateTime;
 	}
 
-	public void setDateTime(Date dateTime) {
+	public void setDateTime(String dateTime) {
 		this.dateTime = dateTime;
 	}
 

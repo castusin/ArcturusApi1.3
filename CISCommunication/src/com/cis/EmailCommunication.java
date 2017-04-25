@@ -50,7 +50,7 @@ public class EmailCommunication {
 		return cisResult;
 	}
 	
-	public CISResults sendMailDateTime(Date dateTime) {
+	public CISResults sendMailDateTime(String dateTime) {
 		// TODO Auto-generated method stub
 		CISResults cisResult = new CISResults();
 		String emailId=CISConstants.ADMINEMAILID;

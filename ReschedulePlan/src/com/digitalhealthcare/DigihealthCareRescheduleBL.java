@@ -32,7 +32,7 @@ public class DigihealthCareRescheduleBL {
 		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
 		
 		String userId=reschedulePlans.getUserId();
-		Date dateTime=reschedulePlans.getDateTime();
+		String dateTime=reschedulePlans.getDateTime();
 		  TimeCheck time=new TimeCheck();
 	      String createDateTime=time.getTimeZone();
 	      String sessionId = UUID.randomUUID().toString();
