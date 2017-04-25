@@ -22,7 +22,7 @@ public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 	     planModel.setPatientId(rs.getString("Patient_id"));
 	     planModel.setStartTime(rs.getString("Apt_starttime"));
 		 planModel.setEndTime(rs.getString("Apt_endtime"));
-		 planModel.setAllDay(rs.getString("Total_day"));
+		 planModel.setAllDay(rs.getBoolean("Total_day"));
 		 planModel.setTitle(rs.getString("Type"));
 		 planModel.setAppWith(rs.getString("Apt_with"));
 		// planModel.setUserId(rs.getString("User_id"));

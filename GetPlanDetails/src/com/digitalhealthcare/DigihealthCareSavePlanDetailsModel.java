@@ -20,7 +20,7 @@ public class DigihealthCareSavePlanDetailsModel {
 	public String status;
 	public String aptDate;
 	public Date createDate;
-	public String allDay;
+	public boolean allDay;
 	public String startTime;
 	public String endTime;
 	public String patientId;
@@ -31,7 +31,7 @@ public class DigihealthCareSavePlanDetailsModel {
 	
 	public DigihealthCareSavePlanDetailsModel(int aptId, String userId,
 			int aptPersonId, String type, String appWith, String status,
-			String aptDate, Date createDate, String startTime, String endTime, String totalDay, String patientId, String allDay, String title) {
+			String aptDate, Date createDate, String startTime, String endTime, String totalDay, String patientId, boolean allDay, String title) {
 		super();
 		this.aptId = aptId;
 		this.userId = userId;
@@ -109,11 +109,13 @@ public class DigihealthCareSavePlanDetailsModel {
 		this.title = title;
 	}
 
-	public String getAllDay() {
+	
+
+	public boolean isAllDay() {
 		return allDay;
 	}
 
-	public void setAllDay(String allDay) {
+	public void setAllDay(boolean allDay) {
 		this.allDay = allDay;
 	}
 
