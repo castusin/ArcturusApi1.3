@@ -37,6 +37,10 @@
  		<property name="dataSource" ref="ds" /> 
  	</bean>
  	
+ 	<bean id="viewMessagesDAO" class="com.digitalhealthcare.DigitalHealthCareViewMessagesDAO"> 
+ 		<property name="dataSource" ref="ds" /> 
+ 	</bean>
+ 	
 <!-- Development  DB connections     --> 
 
 <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  

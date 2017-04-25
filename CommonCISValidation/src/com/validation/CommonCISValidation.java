@@ -53,7 +53,41 @@ public class CommonCISValidation {
 			 }*/
 			return cisResult;
 	}
-	
+	public CISResults viewMessagesValidation(String patientId,String userId,HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		CISResults cisResult=new CISResults();
+		CISSessionWebservice cisSessionTime = new CISSessionWebservice();
+		ArrayList<String> emptyValidatonArray= new ArrayList<String>();
+		emptyValidatonArray.add(patientId);
+		cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+			String headerAuthorization=request.getHeader(CISConstants.HEADERS_AUTHROIZATION);
+	        //Validate Headers AUTHROIZATION
+	   if(headerAuthorization.equals(CISConstants.HEADERS_AUTHROIZATION_VAUE))
+	         {
+		               cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	         }else
+	         {
+		               cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+	          }
+	   
+	   
+	        // Validate Null Values 
+	   if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
+		  {
+	   
+			 for (String st : emptyValidatonArray) {
+		            if  (st==null || st.equals(""))
+		            	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+		          } 
+		  }
+	   //Validate Session Time
+		 /* if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
+			 {
+		       cisResult  = cisSessionTime.getSessionDetails(patientId,sessionId);
+		  
+			 }*/
+			return cisResult;
+	}
 	
 	public CISResults getReschedulePlanDetaisValidation(DigihealthCareRescheduleModel reschedulePlans,HttpServletRequest request) {
 		// TODO Auto-generated method stub

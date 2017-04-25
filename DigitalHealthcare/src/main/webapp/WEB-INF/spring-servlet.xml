@@ -13,9 +13,6 @@
     <bean name="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
     <bean name="jsonTemplate" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
  
-	
-	
-	
 	<bean id="sessionHandler" class="com.cis.CISSessionDAO">
 		<property name="dataSource" ref="ds" />
 	</bean>
@@ -36,6 +33,11 @@
  	<bean id="CancelreschedulePlanDAO" class="com.digitalhealthcare.DigihealthCareCancelRescheduleplanDAO"> 
  		<property name="dataSource" ref="ds" /> 
  	</bean>
+ 	
+ 	<bean id="viewMessagesDAO" class="com.digitalhealthcare.DigitalHealthCareViewMessagesDAO"> 
+ 		<property name="dataSource" ref="ds" /> 
+ 	</bean>
+ 	
 <!-- Development  DB connections     --> 
 
 <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  

@@ -13,6 +13,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/GetPlanDetails"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/ReschedulePlan"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/CancelReschedulePlan"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ViewMessages"/>
         <property name="context-root" value="DigitalHealthcare"/>
         <property name="java-output-path" value="/DigitalHealthcare/target/classes"/>
     </wb-module>
