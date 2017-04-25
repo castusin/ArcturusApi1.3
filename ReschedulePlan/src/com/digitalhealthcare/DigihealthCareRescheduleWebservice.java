@@ -10,7 +10,7 @@ import com.cis.CISResults;
  */
 public class DigihealthCareRescheduleWebservice {
 
-	public CISResults reschedulePlan(DigihealthCareRescheduleModel reschedulePlans) {
+	public CISResults reschedulePlan(DigihealthCareRescheduleModel reschedulePlans) throws Exception {
 		// TODO Auto-generated method stub
 		DigihealthCareRescheduleBL rescheduleBL = new DigihealthCareRescheduleBL();
 		 Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsWebservice.class);

@@ -30,7 +30,7 @@ public class DigitalHealthCareGetReschedulePlanDetailsRest {
 	
 	@RequestMapping(value="/reschedulePlan",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
 	
-	public String reschedulePlan(HttpServletRequest request,@RequestBody DigihealthCareRescheduleModel reschedulePlans){
+	public String reschedulePlan(HttpServletRequest request,@RequestBody DigihealthCareRescheduleModel reschedulePlans) throws Exception{
 		    Logger logger = Logger.getLogger(DigitalHealthCareGetReschedulePlanDetailsRest.class);
 			/*String getReschedulePlanDetaisParameters = "userId=" +userId;
 		    logger.info(" DigitalHealthCare:Reschedule plan :"+getReschedulePlanDetaisParameters);*/
