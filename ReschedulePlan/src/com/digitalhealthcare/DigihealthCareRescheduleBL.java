@@ -2,6 +2,10 @@
 package com.digitalhealthcare;
 
 import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 import java.util.UUID;
 
 import org.apache.commons.codec.digest.DigestUtils;
@@ -24,7 +28,7 @@ public class DigihealthCareRescheduleBL {
 	DigihealthCareRescheduleDAO rescheduleDAO=(DigihealthCareRescheduleDAO)ctx.getBean("reschedulePlanDAO");
 
 
-	public CISResults reschedulePlan(DigihealthCareRescheduleModel reschedulePlans) {
+	public CISResults reschedulePlan(DigihealthCareRescheduleModel reschedulePlans) throws Exception {
 		// TODO Auto-generated method stub
 		
 		 SMSCommunication smsCommunicaiton=new SMSCommunication();
@@ -33,6 +37,14 @@ public class DigihealthCareRescheduleBL {
 		
 		String userId=reschedulePlans.getUserId();
 		String dateTime=reschedulePlans.getDateTime();
+		
+		  /* DateFormat sdf = new SimpleDateFormat("EEE MMM dd yyyy HH:hh:ss");
+		   Date date = (Date) sdf.parse("Wed Apr 19 2017 12:00:00"); 
+		   sdf.setTimeZone(TimeZone.getTimeZone("CST"));
+		   System.out.println(sdf.format(date));
+		*/
+		
+		
 		  TimeCheck time=new TimeCheck();
 	      String createDateTime=time.getTimeZone();
 	      String sessionId = UUID.randomUUID().toString();
