@@ -53,9 +53,9 @@ public class DigihealthCareRescheduleBL {
 	      messageId=upToNCharacters;
 	      String emailID= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
-		CISResults cisResult = rescheduleDAO.reschedulePlan(messageId,reschedulePlans.getAptId(),reschedulePlans.getPatientId(),reschedulePlans.getUserId(),phoneNumber,emailID,reschedulePlans.getMessageText(),createDateTime,sessionId);
+		  CISResults cisResult = rescheduleDAO.reschedulePlan(messageId,reschedulePlans.getAptId(),reschedulePlans.getPatientId(),reschedulePlans.getUserId(),phoneNumber,emailID,reschedulePlans.getMessageText(),createDateTime,sessionId);
 		
-		try {
+		  try {
 			cisResult=smsCommunicaiton.sendMessagesReschedule(userId,dateTime);
 			} catch (Throwable e) {
 				

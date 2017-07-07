@@ -32,14 +32,14 @@ public class DigitalHealthCareViewMessagesRest {
 	 public String viewMessages(@RequestParam ("patientId") String patientId,@RequestParam ("userId") String userId,HttpServletRequest request){
 		    Logger logger = Logger.getLogger(DigitalHealthCareGetPatientPlanDetailsRest.class);
 			String viewMessageParameters = "patientId=" +patientId;
-		    logger.info(" DigitalHealthCare:Get plan details :"+viewMessageParameters);
+		    logger.info(" DigitalHealthCare:view messages:"+viewMessageParameters);
             CommonCISValidation CommonCISValidation=new CommonCISValidation();
 		    CISResults cisResults=CommonCISValidation.viewMessagesValidation(patientId,userId,request);
 		    if(cisResults.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		     {
 		    	DigitalHealthCareViewMessagesWebservice viewMessagesWebservice= new DigitalHealthCareViewMessagesWebservice();
 		       cisResults  = viewMessagesWebservice.viewMessages(patientId,userId);
-		       logger.info(" DigitalHealthCare: getPlandetails :"+cisResults);
+		       logger.info(" DigitalHealthCare: view message service :"+cisResults);
 		     }
 		       return returnJsonData(cisResults);
 	 }
