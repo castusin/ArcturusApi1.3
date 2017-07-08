@@ -17,7 +17,7 @@ public class DigiHealthCareGetPlanDetailsMapper implements RowMapper{
 public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
 	DigihealthCareSavePlanDetailsModel planModel = new DigihealthCareSavePlanDetailsModel();
-	     planModel.setAptId(rs.getInt("Apt_id"));
+	     planModel.setAptId(rs.getString("Apt_id"));
 	     planModel.setAptPersonId(rs.getInt("Apt_person_id"));
 	     planModel.setPatientId(rs.getString("Patient_id"));
 	     planModel.setStartTime(rs.getString("Apt_starttime"));

@@ -7,29 +7,62 @@ public class DigitalHealthCareViewMessagesModel {
 	String userId;
 	String patientId;
 	String messageId;
-	int aptId;
+	String aptId;
 	String messageText;
 	String phoneNumber;
 	String emailId;
 	Date createDate;
 	String aptStarttime;
 	String aptEndtime;
+	String type;
+	String aptWith;
 
-	public DigitalHealthCareViewMessagesModel(int aptId, String userId, String messageId, String messageText, String phoneNumber, String emailId, Date createDate, String aptStarttime, String aptEndtime, String patientId) {
+	
+	
+
+
+	
+
+
+	public String getAptWith() {
+		return aptWith;
+	}
+
+
+	public void setAptWith(String aptWith) {
+		this.aptWith = aptWith;
+	}
+
+
+	public DigitalHealthCareViewMessagesModel(String userId, String patientId,
+			String messageId, String aptId, String messageText,
+			String phoneNumber, String emailId, Date createDate,
+			String aptStarttime, String aptEndtime, String type, String aptWith) {
 		super();
-		this.aptId = aptId;
 		this.userId = userId;
+		this.patientId = patientId;
 		this.messageId = messageId;
+		this.aptId = aptId;
 		this.messageText = messageText;
 		this.phoneNumber = phoneNumber;
 		this.emailId = emailId;
 		this.createDate = createDate;
-		this.aptStarttime=aptStarttime;
-		this.aptEndtime=aptEndtime;
-		
-		this.patientId=patientId;
+		this.aptStarttime = aptStarttime;
+		this.aptEndtime = aptEndtime;
+		this.type = type;
+		this.aptWith = aptWith;
 	}
-	
+
+
+	public String getType() {
+		return type;
+	}
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 
 	public String getUserId() {
 		return userId;
@@ -61,12 +94,14 @@ public class DigitalHealthCareViewMessagesModel {
 	}
 
 
-	public int getAptId() {
+	
+
+	public String getAptId() {
 		return aptId;
 	}
 
 
-	public void setAptId(int aptId) {
+	public void setAptId(String aptId) {
 		this.aptId = aptId;
 	}
 

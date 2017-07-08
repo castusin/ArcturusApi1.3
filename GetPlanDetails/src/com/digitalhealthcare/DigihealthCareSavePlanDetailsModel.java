@@ -12,7 +12,7 @@ import java.sql.Timestamp;
  */
 public class DigihealthCareSavePlanDetailsModel {
 
-	public int aptId;
+	public String aptId;
 	public String userId;
 	public int aptPersonId;
 	public String title;
@@ -29,9 +29,10 @@ public class DigihealthCareSavePlanDetailsModel {
 	
 	
 	
-	public DigihealthCareSavePlanDetailsModel(int aptId, String userId,
-			int aptPersonId, String type, String appWith, String status,
-			String aptDate, Date createDate, String startTime, String endTime, String totalDay, String patientId, boolean allDay, String title) {
+	public DigihealthCareSavePlanDetailsModel(String aptId, String userId,
+			int aptPersonId, String title, String appWith, String status,
+			String aptDate, Date createDate, boolean allDay, String startTime,
+			String endTime, String patientId) {
 		super();
 		this.aptId = aptId;
 		this.userId = userId;
@@ -41,12 +42,12 @@ public class DigihealthCareSavePlanDetailsModel {
 		this.status = status;
 		this.aptDate = aptDate;
 		this.createDate = createDate;
-		this.startTime=startTime;
-		this.endTime=endTime;
-		this.allDay=allDay;
-		this.patientId=patientId;
+		this.allDay = allDay;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.patientId = patientId;
 	}
-	
+
 	public String getAptDate() {
 		return aptDate;
 	}
@@ -55,12 +56,14 @@ public class DigihealthCareSavePlanDetailsModel {
 		this.aptDate = aptDate;
 	}
 
-	public int getAptId() {
+	public String getAptId() {
 		return aptId;
 	}
-	public void setAptId(int aptId) {
+
+	public void setAptId(String aptId) {
 		this.aptId = aptId;
 	}
+
 	public String getUserId() {
 		return userId;
 	}

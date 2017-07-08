@@ -25,7 +25,7 @@ public class DigitalHealthCareViewMessagesDAO extends JdbcDaoSupport {
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsDAO.class);
-		Object[] inputs = new Object[]{patientId,userId};
+		Object[] inputs = new Object[]{patientId};
 		try{
 			// Capture service Start time
 			 TimeCheck time=new TimeCheck();

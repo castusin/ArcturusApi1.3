@@ -19,14 +19,15 @@ public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 	   viewMessages.setUserId(rs.getString("User_id"));
 	   viewMessages.setPatientId(rs.getString("Patient_id"));
 	   viewMessages.setMessageId(rs.getString("Message_id"));
-	   viewMessages.setAptId(rs.getInt("Apt_id"));
+	   viewMessages.setAptId(rs.getString("Apt_id"));
 	   viewMessages.setMessageText(rs.getString("Message_text"));
 	   viewMessages.setPhoneNumber(rs.getString("phoneNumber"));
 	   viewMessages.setEmailId(rs.getString("emailId"));
 	   viewMessages.setCreateDate(rs.getDate("Create_date"));
 	   viewMessages.setAptStarttime(rs.getString("Apt_starttime"));
 	   viewMessages.setAptEndtime(rs.getString("Apt_endtime"));
-			
+	   viewMessages.setType(rs.getString("type"));
+	   viewMessages.setAptWith(rs.getString("Apt_with"));
 		
 		return viewMessages;
 	}
