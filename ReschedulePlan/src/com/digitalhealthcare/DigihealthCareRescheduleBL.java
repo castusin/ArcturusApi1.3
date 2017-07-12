@@ -33,10 +33,10 @@ public class DigihealthCareRescheduleBL {
 		
 		 SMSCommunication smsCommunicaiton=new SMSCommunication();
 		 EmailCommunication sendMail=new EmailCommunication();
-		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
+		 final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
 		
-		String userId=reschedulePlans.getUserId();
-		String dateTime=reschedulePlans.getDateTime();
+		 String userId=reschedulePlans.getUserId();
+		 String dateTime=reschedulePlans.getDateTime();
 		
 		  /* DateFormat sdf = new SimpleDateFormat("EEE MMM dd yyyy HH:hh:ss");
 		   Date date = (Date) sdf.parse("Wed Apr 19 2017 12:00:00"); 
@@ -48,12 +48,13 @@ public class DigihealthCareRescheduleBL {
 		  TimeCheck time=new TimeCheck();
 	      String createDateTime=time.getTimeZone();
 	      String sessionId = UUID.randomUUID().toString();
-	      String messageId = DigestUtils.sha1Hex(sessionId);
-	      String upToNCharacters = messageId.substring(0, Math.min(userId.length(), 5));
-	      messageId=upToNCharacters;
+	      String messageId=DigestUtils.sha1Hex(sessionId);
+          String upToNCharacters = messageId.substring(0, Math.min(messageId.length(), 6));
+          messageId=upToNCharacters;
 	      String emailID= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
-		  CISResults cisResult = rescheduleDAO.reschedulePlan(messageId,reschedulePlans.getAptId(),reschedulePlans.getPatientId(),reschedulePlans.getUserId(),phoneNumber,emailID,reschedulePlans.getMessageText(),createDateTime,sessionId);
+	      String messageText=reschedulePlans.getMessageText()+":"+dateTime;
+		  CISResults cisResult = rescheduleDAO.reschedulePlan(messageId,reschedulePlans.getAptId(),reschedulePlans.getPatientId(),reschedulePlans.getUserId(),phoneNumber,emailID,messageText,createDateTime,sessionId);
 		
 		  try {
 			cisResult=smsCommunicaiton.sendMessagesReschedule(userId,dateTime);

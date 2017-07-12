@@ -24,7 +24,7 @@ public class DigihealthCareSavePlanDetailsModel {
 	public String startTime;
 	public String endTime;
 	public String patientId;
-	
+	public String color;
 	
 	
 	
@@ -32,7 +32,7 @@ public class DigihealthCareSavePlanDetailsModel {
 	public DigihealthCareSavePlanDetailsModel(String aptId, String userId,
 			int aptPersonId, String title, String appWith, String status,
 			String aptDate, Date createDate, boolean allDay, String startTime,
-			String endTime, String patientId) {
+			String endTime, String patientId, String color, String colour) {
 		super();
 		this.aptId = aptId;
 		this.userId = userId;
@@ -46,7 +46,22 @@ public class DigihealthCareSavePlanDetailsModel {
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.patientId = patientId;
+		this.color=color;
 	}
+
+	
+
+	public String getColor() {
+		return color;
+	}
+
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+
 
 	public String getAptDate() {
 		return aptDate;

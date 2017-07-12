@@ -35,8 +35,8 @@ public class DigihealthCareSaveMessagesBL {
 	      String userId=saveMessages.getUserId();
 	      String sessionId = UUID.randomUUID().toString();
 	      String messageId=DigestUtils.sha1Hex(sessionId);
-	      String upToNCharacters = messageId.substring(0, Math.min(userId.length(), 5));
-	      messageId=upToNCharacters;
+          String upToNCharacters = messageId.substring(0, Math.min(messageId.length(), 6));
+          messageId=upToNCharacters;
 	      String emailId= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
 		CISResults cisResult = saveMessagesDAO.sendMessages(messageId,saveMessages.getAptId(),saveMessages.getPatientId(),saveMessages.getUserId(),phoneNumber,emailId,saveMessages.getMessageText(),createDate,sessionId);

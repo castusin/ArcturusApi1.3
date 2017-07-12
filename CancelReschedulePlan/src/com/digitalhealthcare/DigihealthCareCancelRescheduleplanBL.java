@@ -37,12 +37,12 @@ public class DigihealthCareCancelRescheduleplanBL {
 	      TimeCheck time=new TimeCheck();
 	      String createDateTime=time.getTimeZone();
 	      String sessionId = UUID.randomUUID().toString();
-	      String messageId = DigestUtils.sha1Hex(sessionId);
-	      String upToNCharacters = messageId.substring(0, Math.min(userId.length(), 5));
-	      messageId=upToNCharacters;
+	      String messageId=DigestUtils.sha1Hex(sessionId);
+          String upToNCharacters = messageId.substring(0, Math.min(messageId.length(), 6));
+          messageId=upToNCharacters;
 	      String emailID= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
-		CISResults cisResult = cancelRescheduleplanDAO.cancelSchedulePlan(messageId,cancelSchedulePlan.getAptId(),cancelSchedulePlan.getPatientId(),cancelSchedulePlan.getUserId(),phoneNumber,emailID,message,createDateTime,sessionId);
+		  CISResults cisResult = cancelRescheduleplanDAO.cancelSchedulePlan(messageId,cancelSchedulePlan.getAptId(),cancelSchedulePlan.getPatientId(),cancelSchedulePlan.getUserId(),phoneNumber,emailID,message,createDateTime,sessionId);
 		
 		try {
 			cisResult=smsCommunicaiton.sendMessages(userId,message);

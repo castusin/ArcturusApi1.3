@@ -10,7 +10,7 @@ import java.sql.Timestamp;
  */
 public class DigihealthCareRescheduleModel {
 
-	public int aptId;
+	public String aptId;
 	public String userId;
 	public String patientId;
 	public int phoneNumber;
@@ -22,7 +22,7 @@ public class DigihealthCareRescheduleModel {
 	public String dateTime;
 	public String sessionId;
 	
-	public DigihealthCareRescheduleModel(int aptId, String userId,
+	public DigihealthCareRescheduleModel(String aptId, String userId,
 			
 			 Date createDate, String patientId, String messageText, Date createDateTime, String dateTime, String sessionId, int phoneNumber, String emailId) {
 		super();
@@ -37,12 +37,17 @@ public class DigihealthCareRescheduleModel {
 		this.emailId=emailId;
 	}
 	
-	public int getAptId() {
+	
+	public String getAptId() {
 		return aptId;
 	}
-	public void setAptId(int aptId) {
+
+
+	public void setAptId(String aptId) {
 		this.aptId = aptId;
 	}
+
+
 	public String getUserId() {
 		return userId;
 	}

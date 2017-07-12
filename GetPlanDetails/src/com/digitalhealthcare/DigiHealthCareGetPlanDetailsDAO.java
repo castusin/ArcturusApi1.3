@@ -21,10 +21,11 @@ import com.cis.testServiceTime;
 public class DigiHealthCareGetPlanDetailsDAO extends JdbcDaoSupport {
 
 
-	public CISResults getplanDetaialsData(String patientId, String userId) {
+	public List<DigihealthCareSavePlanDetailsModel> getplanDetaialsData(String patientId, String userId) {
 		// TODO Auto-generated method stub
 		
 		CISResults cisResults=new CISResults();
+		List<DigihealthCareSavePlanDetailsModel> getplans=null;
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsDAO.class);
 		Object[] inputs = new Object[]{patientId};
@@ -33,10 +34,10 @@ public class DigiHealthCareGetPlanDetailsDAO extends JdbcDaoSupport {
 			 TimeCheck time=new TimeCheck();
 			 testServiceTime sessionTimeCheck=new testServiceTime();
 			 String serviceStartTime=time.getTimeZone();
-			 List planDetails=getJdbcTemplate().query(DigiHealthCareGetPlanDetailsQuery.SQL_PLANSDATA,inputs,new DigiHealthCareGetPlanDetailsMapper());
+			 getplans =getJdbcTemplate().query(DigiHealthCareGetPlanDetailsQuery.SQL_PLANSDATA,inputs,new DigiHealthCareGetPlanDetailsMapper());
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-			 cisResults.setResultObject(planDetails);
+			 //cisResults.setResultObject(planDetails);
 			 logger.info("Get PlanDetails data query time:: " +result);
 			
 		} catch (DataAccessException e) {
@@ -45,7 +46,7 @@ public class DigiHealthCareGetPlanDetailsDAO extends JdbcDaoSupport {
 			cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
 			cisResults.setErrorMessage("Failed to get Profile Data");
 		}
-   		return cisResults; 
+   		return getplans; 
 	}
 
 }

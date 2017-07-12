@@ -18,7 +18,7 @@ public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 	DigihealthCareSaveMessagesModel saveMessages = new DigihealthCareSaveMessagesModel();
 	   
 	     
-	     saveMessages.setAptId(rs.getInt("Apt_id"));
+	     saveMessages.setAptId(rs.getString("Apt_id"));
 	     saveMessages.setPatientId(rs.getString("Patient_id"));
 	     saveMessages.setUserId(rs.getString("User_id"));
 	     //saveMessages.setPhoneNumber(rs.getInt("phoneNumber"));

@@ -64,7 +64,9 @@ public class EmailCommunication {
                 "<body>\n" +
                  "<p>Arcturus Care </b><br />"+
                  
-                "<p>Rescheduled date time is "+dateTime+""+
+                "<p>Rescheduled date : "+dateTime+""+
+                
+				
                  
                 "<br />\n"+
                 "<br />\n"+

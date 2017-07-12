@@ -46,7 +46,7 @@ public class DigihealthCareSaveMessagesDAO extends JdbcDaoSupport {
    		return cisResults; 
 	}*/
 
-	public CISResults sendMessages(String messageId, int aptId,
+	public CISResults sendMessages(String messageId, String aptId,
 			String patientId, String userId, String phoneNumber, String emailId,
 			String messageText, String createDate, String sessionId) {
 		CISResults cisResults=new CISResults();

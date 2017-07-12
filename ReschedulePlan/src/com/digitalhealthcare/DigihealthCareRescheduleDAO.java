@@ -20,7 +20,7 @@ import com.cis.testServiceTime;
 public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
 
 
-	public CISResults reschedulePlan(String messageId, int aptId,
+	public CISResults reschedulePlan(String messageId, String aptId,
 			String patientId, String userId,String phoneNumber, String emailID, String messageText,
 			String createDateTime, String sessionId ) {
 		CISResults cisResults=new CISResults();
