@@ -20,7 +20,7 @@ public class DigihealthCareSaveMessagesModel {
 	
 	public Date createDate;
 	public String sessionId;
-	
+	public String type;
 	
 	
 	public DigihealthCareSaveMessagesModel(String aptId, String userId,
@@ -35,10 +35,23 @@ public class DigihealthCareSaveMessagesModel {
 		this.messageText = messageText;
 		this.sessionId=sessionId;
 		this.createDate = createDate;
+		this.type=type;
 	}
 	
 	
 	
+	public String getType() {
+		return type;
+	}
+
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+
 	public String getAptId() {
 		return aptId;
 	}

@@ -14,6 +14,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/ReschedulePlan"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/CancelReschedulePlan"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/ViewMessages"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ProfileDeleteService"/>
         <property name="context-root" value="DigitalHealthcare"/>
         <property name="java-output-path" value="/DigitalHealthcare/target/classes"/>
     </wb-module>

@@ -15,7 +15,7 @@ import com.cis.TimeCheck;
 import com.cis.testServiceTime;
 
 /**
- * @author Darshan
+ * @author 
  *
  */
 public class DigiHealthCareGetPlanDetailsDAO extends JdbcDaoSupport {

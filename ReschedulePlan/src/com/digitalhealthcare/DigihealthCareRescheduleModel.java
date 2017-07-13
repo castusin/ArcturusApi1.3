@@ -21,10 +21,10 @@ public class DigihealthCareRescheduleModel {
 	public Date createDateTime;
 	public String dateTime;
 	public String sessionId;
-	
+	public String type;
 	public DigihealthCareRescheduleModel(String aptId, String userId,
 			
-			 Date createDate, String patientId, String messageText, Date createDateTime, String dateTime, String sessionId, int phoneNumber, String emailId) {
+			 Date createDate, String patientId, String messageText, Date createDateTime, String dateTime, String sessionId, int phoneNumber, String emailId, String type) {
 		super();
 		this.aptId = aptId;
 		this.userId = userId;
@@ -35,9 +35,20 @@ public class DigihealthCareRescheduleModel {
 		this.sessionId=sessionId;
 		this.phoneNumber=phoneNumber;
 		this.emailId=emailId;
+		this.type=type;
 	}
 	
 	
+	public String getType() {
+		return type;
+	}
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
 	public String getAptId() {
 		return aptId;
 	}

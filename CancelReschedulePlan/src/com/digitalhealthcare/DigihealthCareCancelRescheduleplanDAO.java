@@ -14,7 +14,7 @@ public class DigihealthCareCancelRescheduleplanDAO extends JdbcDaoSupport {
 	public CISResults cancelSchedulePlan(String messageId, String aptId,
 			String patientId, String userId, String phoneNumber,
 			String emailID, String messageText, String createDateTime,
-			String sessionId) {
+			String sessionId, String type) {
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Logger logger = Logger.getLogger(DigihealthCareSaveMessagesDAO.class);
@@ -24,7 +24,7 @@ public class DigihealthCareCancelRescheduleplanDAO extends JdbcDaoSupport {
 			 TimeCheck time=new TimeCheck();
 			 testServiceTime sessionTimeCheck=new testServiceTime();
 			 String serviceStartTime=time.getTimeZone();
-			 getJdbcTemplate().update(DigihealthCareCancelRescheduleplanQuery.SQL_CANCELRESCHEDULEPLAN,messageId,aptId,patientId,userId,phoneNumber,emailID,messageText,createDateTime);
+			 getJdbcTemplate().update(DigihealthCareCancelRescheduleplanQuery.SQL_CANCELRESCHEDULEPLAN,messageId,aptId,patientId,userId,phoneNumber,emailID,messageText,createDateTime,type);
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
 			 logger.info("Get PlanDetails data query time:: " +result);

@@ -39,7 +39,8 @@ public class DigihealthCareSaveMessagesBL {
           messageId=upToNCharacters;
 	      String emailId= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
-		CISResults cisResult = saveMessagesDAO.sendMessages(messageId,saveMessages.getAptId(),saveMessages.getPatientId(),saveMessages.getUserId(),phoneNumber,emailId,saveMessages.getMessageText(),createDate,sessionId);
+	      String type=CISConstants.SENT;
+		CISResults cisResult = saveMessagesDAO.sendMessages(messageId,saveMessages.getAptId(),saveMessages.getPatientId(),saveMessages.getUserId(),phoneNumber,emailId,saveMessages.getMessageText(),createDate,sessionId,type);
 		//CISResults cisResults = new CISResults();
 		try {
 			cisResult=smsCommunicaiton.sendMessages(userId,message);

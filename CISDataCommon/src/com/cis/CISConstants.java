@@ -57,6 +57,7 @@ public class CISConstants {
 	public static final String MAIL_FAILED = "Email failed to delivery ";
 	public static final String SUBJECT ="Arcturus";
 	public static final String CANCEL ="Cancel Request";
+	public static final String SENT ="Sent Message";
 	
 	public CISConstants() {
 		// TODO Auto-generated constructor stub

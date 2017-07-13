@@ -38,7 +38,7 @@ public class DigiHealthCareGetPlanDetailsBL {
 			 String aptId = getPlans.get(i).aptId;;
 			// String userId;
 			 int aptPersonId = getPlans.get(i).aptPersonId;;
-			 
+			
 			 String appWith = getPlans.get(i).appWith;;
 			 String status = getPlans.get(i).status;
 			 String aptDate = getPlans.get(i).aptDate;;

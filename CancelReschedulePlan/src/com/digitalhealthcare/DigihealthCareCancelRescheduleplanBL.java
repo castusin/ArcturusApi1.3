@@ -42,7 +42,8 @@ public class DigihealthCareCancelRescheduleplanBL {
           messageId=upToNCharacters;
 	      String emailID= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
-		  CISResults cisResult = cancelRescheduleplanDAO.cancelSchedulePlan(messageId,cancelSchedulePlan.getAptId(),cancelSchedulePlan.getPatientId(),cancelSchedulePlan.getUserId(),phoneNumber,emailID,message,createDateTime,sessionId);
+	      String type=CISConstants.SENT;
+		  CISResults cisResult = cancelRescheduleplanDAO.cancelSchedulePlan(messageId,cancelSchedulePlan.getAptId(),cancelSchedulePlan.getPatientId(),cancelSchedulePlan.getUserId(),phoneNumber,emailID,message,createDateTime,sessionId,type);
 		
 		try {
 			cisResult=smsCommunicaiton.sendMessages(userId,message);

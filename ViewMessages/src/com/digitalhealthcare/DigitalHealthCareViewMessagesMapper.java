@@ -26,9 +26,10 @@ public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 	   viewMessages.setCreateDate(rs.getDate("Create_date"));
 	   viewMessages.setAptStarttime(rs.getString("Apt_starttime"));
 	   viewMessages.setAptEndtime(rs.getString("Apt_endtime"));
-	   viewMessages.setType(rs.getString("type"));
+	  // viewMessages.setType(rs.getString("type"));
 	   viewMessages.setAptWith(rs.getString("Apt_with"));
-		
-		return viewMessages;
+	   viewMessages.setMessageType(rs.getString("Message_type"));
+	   viewMessages.setTitle(rs.getString("Type"));
+	   return viewMessages;
 	}
 }

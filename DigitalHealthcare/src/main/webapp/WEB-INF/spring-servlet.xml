@@ -38,6 +38,10 @@
  		<property name="dataSource" ref="ds" /> 
  	</bean>
  	
+ 	<bean id="deleteProfile" class="com.digitalhealthcare.DigitalHealthCareProfileDeleteServiceDAO"> 
+ 		<property name="dataSource" ref="ds" /> 
+ 	</bean>
+ 	
 <!-- Development  DB connections     --> 
 
 <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  

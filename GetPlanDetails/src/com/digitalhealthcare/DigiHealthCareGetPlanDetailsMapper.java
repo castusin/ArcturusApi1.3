@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 
 /**
- * @author Darshan
+ * @author 
  *
  */
 @SuppressWarnings("rawtypes")
@@ -25,7 +25,7 @@ public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 		 planModel.setAllDay(rs.getBoolean("Total_day"));
 		 planModel.setTitle(rs.getString("Type"));
 		 planModel.setAppWith(rs.getString("Apt_with"));
-		// planModel.setUserId(rs.getString("User_id"));
+		 //planModel.setUserId(rs.getString("User_id"));
 	    // planModel.setAptDate(rs.getString("Date_time"));
 		
 		
