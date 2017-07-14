@@ -29,7 +29,7 @@ public class DigihealthCareCancelRescheduleplanBL {
 		
 		 SMSCommunication smsCommunicaiton=new SMSCommunication();
 		 EmailCommunication sendMail=new EmailCommunication();
-		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
+		 final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
 		
 		  String userId=cancelSchedulePlan.getUserId();
 		//  Date dateTime=cancelSchedulePlan.getDateTime();
@@ -45,7 +45,7 @@ public class DigihealthCareCancelRescheduleplanBL {
 	      String type=CISConstants.SENT;
 		  CISResults cisResult = cancelRescheduleplanDAO.cancelSchedulePlan(messageId,cancelSchedulePlan.getAptId(),cancelSchedulePlan.getPatientId(),cancelSchedulePlan.getUserId(),phoneNumber,emailID,message,createDateTime,sessionId,type);
 		
-		try {
+		  try {
 			cisResult=smsCommunicaiton.sendMessages(userId,message);
 			} catch (Throwable e) {
 				
@@ -54,14 +54,14 @@ public class DigihealthCareCancelRescheduleplanBL {
 				cisResult.setErrorMessage(CISConstants.SMS_FAILED);
 			} 
 		
-		if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
-	     {
-		  cisResult=sendMail.sendMail(message);
-	     }
+		  if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
+		  {
+			  cisResult=sendMail.sendMail(message);
+		  }
 		
-		logger.info("DigitalHealthCare:reschedulePlan BL  service" +cisResult );
-		return cisResult;
-	}
+		  logger.info("DigitalHealthCare:reschedulePlan BL  service" +cisResult );
+		  return cisResult;
+		}
 	
 
 }
