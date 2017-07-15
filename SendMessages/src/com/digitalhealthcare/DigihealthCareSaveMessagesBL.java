@@ -24,11 +24,10 @@ public class DigihealthCareSaveMessagesBL {
 
 
 	public CISResults sendMessages(DigihealthCareSaveMessagesModel saveMessages) {
-		// TODO Auto-generated method stub
 		
-		 SMSCommunication smsCommunicaiton=new SMSCommunication();
-		 EmailCommunication sendMail=new EmailCommunication();
-		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
+		  SMSCommunication smsCommunicaiton=new SMSCommunication();
+		  EmailCommunication sendMail=new EmailCommunication();
+		  final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
 		  TimeCheck time=new TimeCheck();
 	      String createDate=time.getTimeZone();
 	      String message=saveMessages.getMessageText();
@@ -40,9 +39,8 @@ public class DigihealthCareSaveMessagesBL {
 	      String emailId= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
 	      String type=CISConstants.SENT;
-		CISResults cisResult = saveMessagesDAO.sendMessages(messageId,saveMessages.getAptId(),saveMessages.getPatientId(),saveMessages.getUserId(),phoneNumber,emailId,saveMessages.getMessageText(),createDate,sessionId,type);
-		//CISResults cisResults = new CISResults();
-		try {
+		  CISResults cisResult = saveMessagesDAO.sendMessages(messageId,saveMessages.getAptId(),saveMessages.getPatientId(),saveMessages.getUserId(),phoneNumber,emailId,saveMessages.getMessageText(),createDate,sessionId,type);
+		  try {
 			cisResult=smsCommunicaiton.sendMessages(userId,message);
 			} catch (Throwable e) {
 				

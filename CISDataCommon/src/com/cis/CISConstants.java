@@ -48,7 +48,7 @@ public class CISConstants {
 	public static final String ACCOUNTType="P";
 	public static final String ACCOUNTType2="F";
 	public static final String ADMINPHONENUMBER="167846213390";
-	public static final String ADMINEMAILID="darshan4solution@gmail.com";
+	public static final String ADMINEMAILID="prasad9620@gmail.com";
 	public static final String EMAILHOST="castusinfo.com";
 	public static final String EMAILUSERNAME="arcturus@castusinfo.com";
 	public static final String EMAILPASSWORD="arcturus";

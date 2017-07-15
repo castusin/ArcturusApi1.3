@@ -25,7 +25,6 @@ public class DigihealthCareCancelRescheduleplanBL {
 
 
 	public CISResults cancelSchedulePlan(DigihealthCareCancelRescheduleplanModel cancelSchedulePlan) {
-		// TODO Auto-generated method stub
 		
 		 SMSCommunication smsCommunicaiton=new SMSCommunication();
 		 EmailCommunication sendMail=new EmailCommunication();
@@ -59,7 +58,7 @@ public class DigihealthCareCancelRescheduleplanBL {
 			  cisResult=sendMail.sendMail(message);
 		  }
 		
-		  logger.info("DigitalHealthCare:reschedulePlan BL  service" +cisResult );
+		  logger.info("DigitalHealthCare:cancel schedulePlan BL  service" +cisResult );
 		  return cisResult;
 		}
 	

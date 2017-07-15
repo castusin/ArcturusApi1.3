@@ -18,8 +18,7 @@ public class DigihealthCareCancelRescheduleplanDAO extends JdbcDaoSupport {
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Logger logger = Logger.getLogger(DigihealthCareSaveMessagesDAO.class);
-		//Object[] inputs = new Object[]{userId};
-		try{
+			try{
 			// Capture service Start time
 			 TimeCheck time=new TimeCheck();
 			 testServiceTime sessionTimeCheck=new testServiceTime();

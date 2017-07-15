@@ -145,9 +145,6 @@ public class SMSCommunication {
          String Type=CISConstants.TYPE;
          //String Message = "Arcturus : provided message" ;
          String phoneNumber=CISConstants.ADMINPHONENUMBER;
-        // Arcturus : John Vonn provided feedback.
-       //  http://193.105.74.159/api/v3/sendsms/plain?user=internationalsms&password=HZlGhtj&sender=KAPNFO&SMSText=TEST&type=longsms&GSM=17325800762
-         
          postData += "user=" + Username + "&password=" + Password + "&sender=" +           
         		 SenderID +"&SMSText=" +message + "&type="+Type+ "&GSM="+phoneNumber;
 		 URL url = new URL("http://193.105.74.159/api/v3/sendsms/plain?");
@@ -182,11 +179,8 @@ public class SMSCommunication {
          String Password = CISConstants.PASSWORD;
          String SenderID = CISConstants.SENDERID; 
          String Type=CISConstants.TYPE;
-         //String Message = "Arcturus : provided message" ;
          String phoneNumber=CISConstants.ADMINPHONENUMBER;
-        // Arcturus : John Vonn provided feedback.
-       //  http://193.105.74.159/api/v3/sendsms/plain?user=internationalsms&password=HZlGhtj&sender=KAPNFO&SMSText=TEST&type=longsms&GSM=17325800762
-         
+        
          postData += "user=" + Username + "&password=" + Password + "&sender=" +           
         		 SenderID +"&SMSText=" +dateTime + "&type="+Type+ "&GSM="+phoneNumber;
 		 URL url = new URL("http://193.105.74.159/api/v3/sendsms/plain?");

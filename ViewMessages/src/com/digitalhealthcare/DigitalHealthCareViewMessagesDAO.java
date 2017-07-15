@@ -20,9 +20,7 @@ public class DigitalHealthCareViewMessagesDAO extends JdbcDaoSupport {
 
 
 	public CISResults viewMessages(String patientId, String userId) {
-		// TODO Auto-generated method stub
-		
-		CISResults cisResults=new CISResults();
+	    CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsDAO.class);
 		Object[] inputs = new Object[]{patientId};
@@ -41,7 +39,7 @@ public class DigitalHealthCareViewMessagesDAO extends JdbcDaoSupport {
 			e.printStackTrace();
 		
 			cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
-			cisResults.setErrorMessage("Failed to get Profile Data");
+			cisResults.setErrorMessage("Failed to get  Data");
 		}
    		return cisResults; 
 	}

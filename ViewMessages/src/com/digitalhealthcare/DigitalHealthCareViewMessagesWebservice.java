@@ -11,8 +11,7 @@ import com.cis.CISResults;
 public class DigitalHealthCareViewMessagesWebservice {
 
 	public CISResults viewMessages(String patientId, String userId) {
-		// TODO Auto-generated method stub
-		DigitalHealthCareViewMessagesBL viewMessagesBL = new DigitalHealthCareViewMessagesBL();
+		 DigitalHealthCareViewMessagesBL viewMessagesBL = new DigitalHealthCareViewMessagesBL();
 		 Logger logger = Logger.getLogger(DigitalHealthCareViewMessagesWebservice.class);
 		 CISResults cisResult = viewMessagesBL.viewMessages(patientId,userId);
 		 logger.info(" DigitalHealthCare: view messages webservice :"+cisResult);

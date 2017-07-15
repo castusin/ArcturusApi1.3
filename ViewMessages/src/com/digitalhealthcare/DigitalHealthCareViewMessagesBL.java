@@ -17,8 +17,6 @@ public class DigitalHealthCareViewMessagesBL {
 
 
 	public CISResults viewMessages(String patientId, String userId) {
-		// TODO Auto-generated method stub
-		
 		final Logger logger = Logger.getLogger(DigitalHealthCareViewMessagesBL.class);
 		CISResults cisResult = viewMessagesDAO.viewMessages(patientId,userId);
 		logger.info("DigitalHealthCare:view messages BL  service" +cisResult );

@@ -29,21 +29,13 @@ public class DigihealthCareRescheduleBL {
 
 
 	public CISResults reschedulePlan(DigihealthCareRescheduleModel reschedulePlans) throws Exception {
-		// TODO Auto-generated method stub
 		
-		 SMSCommunication smsCommunicaiton=new SMSCommunication();
-		 EmailCommunication sendMail=new EmailCommunication();
-		 final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
+		  SMSCommunication smsCommunicaiton=new SMSCommunication();
+		  EmailCommunication sendMail=new EmailCommunication();
+		  final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
 		
-		 String userId=reschedulePlans.getUserId();
-		 String dateTime=reschedulePlans.getDateTime();
-		
-		  /* DateFormat sdf = new SimpleDateFormat("EEE MMM dd yyyy HH:hh:ss");
-		   Date date = (Date) sdf.parse("Wed Apr 19 2017 12:00:00"); 
-		   sdf.setTimeZone(TimeZone.getTimeZone("CST"));
-		   System.out.println(sdf.format(date));
-		*/
-		
+		  String userId=reschedulePlans.getUserId();
+		  String dateTime=reschedulePlans.getDateTime();
 		
 		  TimeCheck time=new TimeCheck();
 	      String createDateTime=time.getTimeZone();
@@ -56,7 +48,7 @@ public class DigihealthCareRescheduleBL {
 	      String type=CISConstants.SENT;
 	      String messageText=reschedulePlans.getMessageText()+":"+dateTime;
 		  CISResults cisResult = rescheduleDAO.reschedulePlan(messageId,reschedulePlans.getAptId(),reschedulePlans.getPatientId(),reschedulePlans.getUserId(),phoneNumber,emailID,messageText,createDateTime,sessionId,type);
-		
+		  // sending sms
 		  try {
 			cisResult=smsCommunicaiton.sendMessagesReschedule(userId,dateTime);
 			} catch (Throwable e) {
@@ -65,7 +57,7 @@ public class DigihealthCareRescheduleBL {
 				cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
 				cisResult.setErrorMessage(CISConstants.SMS_FAILED);
 			} 
-		
+		// sending mail
 		if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 	     {
 		  cisResult=sendMail.sendMailDateTime(dateTime);

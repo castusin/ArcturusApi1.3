@@ -22,7 +22,6 @@ public class DigiHealthCareGetPlanDetailsDAO extends JdbcDaoSupport {
 
 
 	public List<DigihealthCareSavePlanDetailsModel> getplanDetaialsData(String patientId, String userId) {
-		// TODO Auto-generated method stub
 		
 		CISResults cisResults=new CISResults();
 		List<DigihealthCareSavePlanDetailsModel> getplans=null;
@@ -37,14 +36,13 @@ public class DigiHealthCareGetPlanDetailsDAO extends JdbcDaoSupport {
 			 getplans =getJdbcTemplate().query(DigiHealthCareGetPlanDetailsQuery.SQL_PLANSDATA,inputs,new DigiHealthCareGetPlanDetailsMapper());
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-			 //cisResults.setResultObject(planDetails);
 			 logger.info("Get PlanDetails data query time:: " +result);
 			
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 		
 			cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
-			cisResults.setErrorMessage("Failed to get Profile Data");
+			cisResults.setErrorMessage("Failed to get  Data");
 		}
    		return getplans; 
 	}

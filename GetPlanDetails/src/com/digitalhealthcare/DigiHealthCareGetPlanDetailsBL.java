@@ -23,20 +23,18 @@ public class DigiHealthCareGetPlanDetailsBL {
 
 
 	public CISResults DigiHealthCareGetPlanDetailsBL(String patientId, String userId) {
-		// TODO Auto-generated method stub
+		
 		CISResults cisResults=new CISResults();
 		final Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsBL.class);
-		//CISResults cisResult = getplansDAO.getplanDetaialsData(patientId,userId);
-		List<DigihealthCareSavePlanDetailsModel> getPlans = getplansDAO.getplanDetaialsData(patientId,userId);
+	    List<DigihealthCareSavePlanDetailsModel> getPlans = getplansDAO.getplanDetaialsData(patientId,userId);
 		
+	    
 		ArrayList<Object> getplans = new ArrayList<Object>();
 		 
 		for (int i = 0; i < getPlans.size(); i++) {
 			
 			DigihealthCareSavePlanDetailsModel getPlanDetails = new DigihealthCareSavePlanDetailsModel();
-			//Color color = new Color();
 			 String aptId = getPlans.get(i).aptId;;
-			// String userId;
 			 int aptPersonId = getPlans.get(i).aptPersonId;;
 			
 			 String appWith = getPlans.get(i).appWith;;
@@ -46,8 +44,7 @@ public class DigiHealthCareGetPlanDetailsBL {
 			 boolean allDay = getPlans.get(i).allDay;
 			 String startTime = getPlans.get(i).startTime;
 			 String endTime = getPlans.get(i).endTime;
-			// String patientId;
-			 String color = getPlans.get(i).color;
+		     String color = getPlans.get(i).color;
 			 String title= getPlans.get(i).title;
 			 
 			getPlanDetails.setAptPersonId(aptPersonId);

@@ -26,7 +26,6 @@ public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Logger logger = Logger.getLogger(DigihealthCareSaveMessagesDAO.class);
-		//Object[] inputs = new Object[]{userId};
 		try{
 			// Capture service Start time
 			 TimeCheck time=new TimeCheck();
@@ -35,13 +34,13 @@ public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
 			getJdbcTemplate().update(DigihealthCareRescheduleQuery.SQL_RESCHEDULEPLAN,messageId,aptId,patientId,userId,phoneNumber,emailID,messageText,createDateTime,type);
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-			 logger.info("Get PlanDetails data query time:: " +result);
+			 logger.info("Get reschedule plan  data query time:: " +result);
 			
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 		
 			cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
-			cisResults.setErrorMessage("Failed to get Profile Data");
+			cisResults.setErrorMessage("Failed to get  Data");
 		}
    		return cisResults; 
 	}

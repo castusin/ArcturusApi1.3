@@ -28,15 +28,12 @@ import com.validation.CommonCISValidation;
 @RestController
 public class DigitalHealthCareGetSentMessagesRest {
 	
-	//@RequestMapping(value="/sendMessages",method=RequestMethod.GET,produces={"application/json"})
 	@RequestMapping(value="/sendMessages",method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
 	
 	public String sendMessages(HttpServletRequest request,@RequestBody DigihealthCareSaveMessagesModel saveMessages){
 		 
 		Logger logger = Logger.getLogger(DigitalHealthCareGetPatientPlanDetailsRest.class);
-			/*String sentMessageParameters = "userId=" +userId;
-		    logger.info(" DigitalHealthCare:Send messages :"+sentMessageParameters);*/
-            CommonCISValidation CommonCISValidation=new CommonCISValidation();
+		    CommonCISValidation CommonCISValidation=new CommonCISValidation();
 		    CISResults cisResults=CommonCISValidation.sendMessagesValidation(request,saveMessages);
 		    if(cisResults.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		     {

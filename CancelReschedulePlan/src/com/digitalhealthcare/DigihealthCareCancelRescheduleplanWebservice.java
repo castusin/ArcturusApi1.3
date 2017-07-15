@@ -11,7 +11,7 @@ import com.cis.CISResults;
 public class DigihealthCareCancelRescheduleplanWebservice {
 
 	public CISResults cancelSchedulePlan(DigihealthCareCancelRescheduleplanModel cancelSchedulePlan) {
-		// TODO Auto-generated method stub
+		
 		DigihealthCareCancelRescheduleplanBL cancelRescheduleplanBL = new DigihealthCareCancelRescheduleplanBL();
 		 Logger logger = Logger.getLogger(DigihealthCareCancelRescheduleplanWebservice.class);
 		 CISResults cisResult = cancelRescheduleplanBL.cancelSchedulePlan(cancelSchedulePlan);
