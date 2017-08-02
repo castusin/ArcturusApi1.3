@@ -6,6 +6,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="src" path="ReferFriendService"/>
 	<classpathentry kind="src" path="ProfileDeleteService"/>
 	<classpathentry kind="src" path="ViewMessages"/>
 	<classpathentry kind="src" path="CancelReschedulePlan"/>
@@ -27,15 +28,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="E:/GitHub/ArcturusApi1.3/JARS/c3p0-0.9.1.1.jar"/>
@@ -55,5 +50,10 @@
 	<classpathentry kind="lib" path="E:/GitHub/ArcturusApi1.3/JARS/spring-context-4.1.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="E:/GitHub/ArcturusApi1.3/JARS/spring-dao-2.0.6.jar"/>
 	<classpathentry kind="lib" path="E:/GitHub/ArcturusApi1.3/JARS/spring-jdbc-4.0.6.RELEASE.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

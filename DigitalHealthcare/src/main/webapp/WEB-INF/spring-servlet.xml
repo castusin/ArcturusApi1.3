@@ -42,6 +42,10 @@
  		<property name="dataSource" ref="ds" /> 
  	</bean>
  	
+ 	<bean id="ReferFriend" class="com.digitalhealthcare.DigitalHealthCareReferFriendDAO"> 
+ 		<property name="dataSource" ref="ds" /> 
+ 	</bean>
+ 	
 <!-- Development  DB connections     --> 
 
 <!-- <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
