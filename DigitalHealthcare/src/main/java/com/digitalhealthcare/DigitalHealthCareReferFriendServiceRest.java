@@ -16,7 +16,7 @@ import com.google.gson.Gson;
 import com.validation.CommonCISValidation;
 
 /**
- * Rest Controller : save staff member plan Service
+ * Rest Controller : Refer friend Service
  * 
  * @author Castus Info Solutions
  * 
