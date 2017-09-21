@@ -20,7 +20,7 @@ public class DigihealthCareSaveMessagesDAO extends JdbcDaoSupport {
 
 	public CISResults sendMessages(String messageId, String aptId,
 			String patientId, String userId, String phoneNumber, String emailId,
-			String messageText, String createDate, String sessionId, String type) {
+			String messageText, String createDate, String sessionId, String type,String messageCategory) {
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Logger logger = Logger.getLogger(DigihealthCareSaveMessagesDAO.class);
@@ -29,7 +29,7 @@ public class DigihealthCareSaveMessagesDAO extends JdbcDaoSupport {
 			 TimeCheck time=new TimeCheck();
 			 testServiceTime sessionTimeCheck=new testServiceTime();
 			 String serviceStartTime=time.getTimeZone();
-			 getJdbcTemplate().update(DigihealthCareSaveMessagesQuery.SQL_SENDMESSAGES,messageId,aptId,patientId,userId,phoneNumber,emailId,messageText,createDate,type);
+			 getJdbcTemplate().update(DigihealthCareSaveMessagesQuery.SQL_SENDMESSAGES,messageId,aptId,patientId,userId,phoneNumber,emailId,messageText,createDate,type,messageCategory);
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
 			 logger.info(" save messages  query time:: " +result);

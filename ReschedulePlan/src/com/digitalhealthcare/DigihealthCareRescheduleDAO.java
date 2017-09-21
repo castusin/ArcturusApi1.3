@@ -22,7 +22,7 @@ public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
 
 	public CISResults reschedulePlan(String messageId, String aptId,
 			String patientId, String userId,String phoneNumber, String emailID, String messageText,
-			String createDateTime, String sessionId, String type ) {
+			String createDateTime, String sessionId, String type ,String messageCategory) {
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Logger logger = Logger.getLogger(DigihealthCareSaveMessagesDAO.class);
@@ -31,7 +31,7 @@ public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
 			 TimeCheck time=new TimeCheck();
 			 testServiceTime sessionTimeCheck=new testServiceTime();
 			 String serviceStartTime=time.getTimeZone();
-			getJdbcTemplate().update(DigihealthCareRescheduleQuery.SQL_RESCHEDULEPLAN,messageId,aptId,patientId,userId,phoneNumber,emailID,messageText,createDateTime,type);
+			getJdbcTemplate().update(DigihealthCareRescheduleQuery.SQL_RESCHEDULEPLAN,messageId,aptId,patientId,userId,phoneNumber,emailID,messageText,createDateTime,type,messageCategory);
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
 			 logger.info("Get reschedule plan  data query time:: " +result);
@@ -44,5 +44,35 @@ public class DigihealthCareRescheduleDAO extends JdbcDaoSupport {
 		}
    		return cisResults; 
 	}
+
+	public CISResults getpatientDetails(String patientId) {
+		// TODO Auto-generated method stub
+
+
+CISResults cisResults=new CISResults();
+		
+		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		Logger logger = Logger.getLogger(DigiHealthCareGetPlanDetailsDAO.class);
+		Object[] inputs = new Object[]{patientId};
+		try{
+			// Capture service Start time
+			 TimeCheck time=new TimeCheck();
+			 testServiceTime sessionTimeCheck=new testServiceTime();
+			 String serviceStartTime=time.getTimeZone();
+			 GetPatientDetailsModel res=(GetPatientDetailsModel)getJdbcTemplate().queryForObject(DigihealthCareCancelRescheduleplanQuery.SQL_GETPATIENTDETAILS,inputs,new GetPatientDetailsMapper());
+			 cisResults.setResultObject(res);
+			 String serviceEndTime=time.getTimeZone();
+			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+			 logger.info("Get PlanDetails data query time:: " +result);
+			
+		} catch (DataAccessException e) {
+			e.printStackTrace();
+		
+			cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
+			cisResults.setErrorMessage("Failed to get  Data");
+		}
+   		return cisResults; 
+	}
+
 
 }

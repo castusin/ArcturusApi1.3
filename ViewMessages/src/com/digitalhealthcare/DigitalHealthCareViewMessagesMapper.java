@@ -24,12 +24,32 @@ public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 	   viewMessages.setPhoneNumber(rs.getString("phoneNumber"));
 	   viewMessages.setEmailId(rs.getString("emailId"));
 	   viewMessages.setCreateDate(rs.getDate("Create_date"));
-	   viewMessages.setAptStarttime(rs.getString("Apt_starttime"));
-	   viewMessages.setAptEndtime(rs.getString("Apt_endtime"));
-	  // viewMessages.setType(rs.getString("type"));
-	   viewMessages.setAptWith(rs.getString("Apt_with"));
+	  // viewMessages.setAptStarttime(rs.getString("Apt_starttime"));
+	   //viewMessages.setAptEndtime(rs.getString("Apt_endtime"));
+	   //viewMessages.setType(rs.getString("type"));
+	   //viewMessages.setAptWith(rs.getString("Apt_with"));
 	   viewMessages.setMessageType(rs.getString("Message_type"));
-	   viewMessages.setTitle(rs.getString("Type"));
+	   viewMessages.setMessageCategory(rs.getString("Message_category"));
+	   //viewMessages.setTitle(rs.getString("Type"));
 	   return viewMessages;
+	
+	/* viewMessages.setPatientId(rs.getString("Patient_id"));
+	  viewMessages.setMessageId(rs.getString("Message_id"));
+	  viewMessages.setAptId(rs.getString("Apt_id"));
+	  viewMessages.setMessageText(rs.getString("Message_text"));
+	  viewMessages.setPhoneNumber(rs.getString("phoneNumber"));
+	  viewMessages.setEmailId(rs.getString("emailId"));
+	  viewMessages.setCreateDate(rs.getString("Create_date"));
+	  //viewMessages.setAptStarttime(rs.getString("Apt_starttime"));
+	  //viewMessages.setAptEndtime(rs.getString("Apt_endtime"));
+	 // viewMessages.setType(rs.getString("type"));
+	 // viewMessages.setAptWith(rs.getString("Apt_with"));
+	  viewMessages.setMessageType(rs.getString("Message_type"));
+	  viewMessages.setMessageCategory(rs.getString("Message_category"));
+	  viewMessages.setUserId(rs.getString("User_id"));
+	  viewMessages.setFirstName(rs.getString("First_name"));
+	  viewMessages.setLastName(rs.getString("Last_name"));
+	  viewMessages.setPhotoUrl(rs.getString("Photo"));
+	  return viewMessages;*/
 	}
 }

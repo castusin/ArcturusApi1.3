@@ -39,7 +39,9 @@ public class DigihealthCareSaveMessagesBL {
 	      String emailId= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
 	      String type=CISConstants.SENT;
-		  CISResults cisResult = saveMessagesDAO.sendMessages(messageId,saveMessages.getAptId(),saveMessages.getPatientId(),saveMessages.getUserId(),phoneNumber,emailId,saveMessages.getMessageText(),createDate,sessionId,type);
+	      String patientId=saveMessages.getPatientId();
+	      String messageCategory=CISConstants.PATIENT_MESSAGE;
+		  CISResults cisResult = saveMessagesDAO.sendMessages(messageId,saveMessages.getAptId(),saveMessages.getPatientId(),saveMessages.getUserId(),phoneNumber,emailId,saveMessages.getMessageText(),createDate,sessionId,type,messageCategory);
 		  try {
 			cisResult=smsCommunicaiton.sendMessages(userId,message);
 			} catch (Throwable e) {
@@ -51,7 +53,7 @@ public class DigihealthCareSaveMessagesBL {
 		
 		if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 	     {
-		  cisResult=sendMail.sendMail(message);
+		  cisResult=sendMail.sendMailSaveMsg(message,patientId);
 	     }
 		logger.info("DigitalHealthCare:send message BL  service" +cisResult );
 		return cisResult;

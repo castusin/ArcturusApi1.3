@@ -19,7 +19,7 @@ public class DigitalHealthCareViewMessagesModel {
     String title;
 	String messageType;
 	
-
+	String messageCategory;		
 
 	
 
@@ -37,7 +37,7 @@ public class DigitalHealthCareViewMessagesModel {
 	public DigitalHealthCareViewMessagesModel(String userId, String patientId,
 			String messageId, String aptId, String messageText,
 			String phoneNumber, String emailId, Date createDate,
-			String aptStarttime, String aptEndtime, String type, String aptWith, String messageType, String title) {
+			String aptStarttime, String aptEndtime, String type, String aptWith, String messageType, String title, String messageCategory) {
 		super();
 		this.userId = userId;
 		this.patientId = patientId;
@@ -53,6 +53,17 @@ public class DigitalHealthCareViewMessagesModel {
 		this.aptWith = aptWith;
 		this.messageType=messageType;
 		this.title=title;
+		this.messageCategory=messageCategory;
+	}
+
+
+	public String getMessageCategory() {
+		return messageCategory;
+	}
+
+
+	public void setMessageCategory(String messageCategory) {
+		this.messageCategory = messageCategory;
 	}
 
 

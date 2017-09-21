@@ -48,16 +48,23 @@ public class CISConstants {
 	public static final String ACCOUNTType="P";
 	public static final String ACCOUNTType2="F";
 	public static final String ADMINPHONENUMBER="167846213390";
-	public static final String ADMINEMAILID="prasad9620@gmail.com";
+	public static final String ADMINEMAILID="darshan2108@gmail.com";
 	public static final String EMAILHOST="castusinfo.com";
+	public static final String PRODEMAILHOST="mathgator.com";
 	public static final String EMAILUSERNAME="arcturus@castusinfo.com";
+	public static final String PRODEMAILUSERNAME="arcturus@mathgator.com";
 	public static final String EMAILPASSWORD="arcturus";
 	public static final String PORT="25";
 	public static final String SMS_FAILED = "Sms failed to delivery ";
 	public static final String MAIL_FAILED = "Email failed to delivery ";
 	public static final String SUBJECT ="Arcturus";
+	public static final String CANCELSUBJECT ="Cancel Appointment";
 	public static final String CANCEL ="Cancel Request";
 	public static final String SENT ="Sent Message";
+	
+	public static final String CANCEL_APT_REQUEST="Cancel Appointment Request";
+	public static final String PATIENT_MESSAGE="Message to Admin";
+	public static final String RESCHEDULE_REQUEST="Reschedule Appointment Request";
 	
 	public CISConstants() {
 		// TODO Auto-generated constructor stub

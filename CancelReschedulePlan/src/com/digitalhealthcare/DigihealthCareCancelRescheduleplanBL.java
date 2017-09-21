@@ -1,7 +1,6 @@
 
 package com.digitalhealthcare;
 
-import java.sql.Date;
 import java.util.UUID;
 
 import org.apache.commons.codec.digest.DigestUtils;
@@ -32,6 +31,8 @@ public class DigihealthCareCancelRescheduleplanBL {
 		
 		  String userId=cancelSchedulePlan.getUserId();
 		//  Date dateTime=cancelSchedulePlan.getDateTime();
+		  CISResults cisResult =new CISResults();
+		 // String s1=
 		  String message=CISConstants.CANCEL;
 	      TimeCheck time=new TimeCheck();
 	      String createDateTime=time.getTimeZone();
@@ -42,10 +43,62 @@ public class DigihealthCareCancelRescheduleplanBL {
 	      String emailID= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
 	      String type=CISConstants.SENT;
-		  CISResults cisResult = cancelRescheduleplanDAO.cancelSchedulePlan(messageId,cancelSchedulePlan.getAptId(),cancelSchedulePlan.getPatientId(),cancelSchedulePlan.getUserId(),phoneNumber,emailID,message,createDateTime,sessionId,type);
+	      String patientId=cancelSchedulePlan.getPatientId();
+	      String aptId=cancelSchedulePlan.getAptId();
+	      String messageCategory=CISConstants.CANCEL_APT_REQUEST;
+	      
+	      
+	      cisResult = cancelRescheduleplanDAO.getpatientDetails(aptId);
+			 
+	      GetPatientDetailsModel  patientfname=(GetPatientDetailsModel)cisResult.getResultObject();
+          String Pfname=patientfname.getPatientFname();
+          GetPatientDetailsModel  patientlname=(GetPatientDetailsModel)cisResult.getResultObject();
+          String Plname=patientlname.getPatientLname();
+          GetPatientDetailsModel  aptwith=(GetPatientDetailsModel)cisResult.getResultObject();
+          String apptWith=aptwith.getAptWith();
+          GetPatientDetailsModel  servicetype=(GetPatientDetailsModel)cisResult.getResultObject();
+          String serviceType=servicetype.getServicetype();
+          GetPatientDetailsModel  starttime=(GetPatientDetailsModel)cisResult.getResultObject();
+          String startTime=starttime.getStartTime();
+          GetPatientDetailsModel  emailid=(GetPatientDetailsModel)cisResult.getResultObject();
+          String pemailId=emailid.getEmailid();
+	      
+         
+	      
+		  String msg="<p>Cancel Request<p/>"+
+		    		 "<p>Staff Name : "+apptWith+"<p/>"+
+		    		 "<p>Appointment Time : "+startTime+"<p/>"+
+		    		 "<p>Service Type : "+serviceType+"<p/>"
+		    		 ;
+		  
+		  String msgs="Cancel Request"+
+		    		 "Staff Name : "+apptWith+""+
+		    		 "Appointment Time : "+startTime+""+
+		    		 "Service Type : "+serviceType+""
+		    		 ;
+		  			
+		  
+		  
+		  
+		   cisResult = cancelRescheduleplanDAO.cancelSchedulePlan(messageId,cancelSchedulePlan.getAptId(),cancelSchedulePlan.getPatientId(),cancelSchedulePlan.getUserId(),phoneNumber,emailID,msg,createDateTime,sessionId,type,messageCategory);
 		
+		 /* cisResult = cancelRescheduleplanDAO.getpatientDetails(aptId);
+		 
+		  GetPatientDetailsModel  patientfname=(GetPatientDetailsModel)cisResult.getResultObject();
+          String Pfname=patientfname.getPatientFname();
+          GetPatientDetailsModel  patientlname=(GetPatientDetailsModel)cisResult.getResultObject();
+          String Plname=patientlname.getPatientLname();
+          GetPatientDetailsModel  aptwith=(GetPatientDetailsModel)cisResult.getResultObject();
+          String apptWith=aptwith.getAptWith();
+          GetPatientDetailsModel  servicetype=(GetPatientDetailsModel)cisResult.getResultObject();
+          String serviceType=servicetype.getServicetype();
+          GetPatientDetailsModel  starttime=(GetPatientDetailsModel)cisResult.getResultObject();
+          String startTime=starttime.getStartTime();
+          GetPatientDetailsModel  emailid=(GetPatientDetailsModel)cisResult.getResultObject();
+          String pemailId=emailid.getEmailid();*/
+          
 		  try {
-			cisResult=smsCommunicaiton.sendMessages(userId,message);
+			cisResult=smsCommunicaiton.sendMessages(userId,msgs);
 			} catch (Throwable e) {
 				
 				e.printStackTrace();
@@ -55,7 +108,9 @@ public class DigihealthCareCancelRescheduleplanBL {
 		
 		  if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		  {
-			  cisResult=sendMail.sendMail(message);
+			  cisResult=sendMail.sendMail(pemailId,Pfname,Plname,apptWith,serviceType,startTime,patientId);
+			  cisResult=sendMail.sendMailAdmin(Pfname,Plname,apptWith,serviceType,startTime,patientId);
+				
 		  }
 		
 		  logger.info("DigitalHealthCare:cancel schedulePlan BL  service" +cisResult );

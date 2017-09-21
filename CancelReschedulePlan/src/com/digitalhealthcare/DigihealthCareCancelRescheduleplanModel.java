@@ -23,9 +23,10 @@ public class DigihealthCareCancelRescheduleplanModel {
 	public Date dateTime;
 	public String sessionId;
 	public String type;
+	public String messageCategory;
 	public DigihealthCareCancelRescheduleplanModel(String aptId, String userId,
 			
-			 Date createDate, String patientId, String messageText, Date createDateTime, Date dateTime, String sessionId, int phoneNumber, String emailId, String type) {
+			 Date createDate, String patientId, String messageText, Date createDateTime, Date dateTime, String sessionId, int phoneNumber, String emailId, String type, String messageCategory) {
 		super();
 		this.aptId = aptId;
 		this.userId = userId;
@@ -37,9 +38,20 @@ public class DigihealthCareCancelRescheduleplanModel {
 		this.phoneNumber=phoneNumber;
 		this.emailId=emailId;
 		this.type=type;
+		this.messageCategory=messageCategory;
 	}
 	
 	
+	public String getMessageCategory() {
+		return messageCategory;
+	}
+
+
+	public void setMessageCategory(String messageCategory) {
+		this.messageCategory = messageCategory;
+	}
+
+
 	public String getType() {
 		return type;
 	}

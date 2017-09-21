@@ -46,8 +46,29 @@ public class DigihealthCareRescheduleBL {
 	      String emailID= CISConstants.ADMINEMAILID;
 	      String phoneNumber=CISConstants.ADMINPHONENUMBER;
 	      String type=CISConstants.SENT;
-	      String messageText=reschedulePlans.getMessageText()+":"+dateTime;
-		  CISResults cisResult = rescheduleDAO.reschedulePlan(messageId,reschedulePlans.getAptId(),reschedulePlans.getPatientId(),reschedulePlans.getUserId(),phoneNumber,emailID,messageText,createDateTime,sessionId,type);
+	      String messageText=reschedulePlans.getMessageText();
+	      String patientId=reschedulePlans.getPatientId();
+	      String aptId=reschedulePlans.getAptId();
+	      String messageCategory=CISConstants.RESCHEDULE_REQUEST;
+		  CISResults cisResult = rescheduleDAO.reschedulePlan(messageId,reschedulePlans.getAptId(),reschedulePlans.getPatientId(),reschedulePlans.getUserId(),phoneNumber,emailID,messageText,createDateTime,sessionId,type,messageCategory);
+		
+		  
+		  cisResult = rescheduleDAO.getpatientDetails(aptId);
+			 
+		  GetPatientDetailsModel  patientfname=(GetPatientDetailsModel)cisResult.getResultObject();
+          String Pfname=patientfname.getPatientFname();
+          GetPatientDetailsModel  patientlname=(GetPatientDetailsModel)cisResult.getResultObject();
+          String Plname=patientlname.getPatientLname();
+          GetPatientDetailsModel  aptwith=(GetPatientDetailsModel)cisResult.getResultObject();
+          String apptWith=aptwith.getAptWith();
+          GetPatientDetailsModel  servicetype=(GetPatientDetailsModel)cisResult.getResultObject();
+          String serviceType=servicetype.getServicetype();
+          GetPatientDetailsModel  starttime=(GetPatientDetailsModel)cisResult.getResultObject();
+          String startTime=starttime.getStartTime();
+		  
+          GetPatientDetailsModel  emailid=(GetPatientDetailsModel)cisResult.getResultObject();
+          String pemailId=emailid.getEmailid();
+		  
 		  // sending sms
 		  try {
 			cisResult=smsCommunicaiton.sendMessagesReschedule(userId,dateTime);
@@ -60,7 +81,9 @@ public class DigihealthCareRescheduleBL {
 		// sending mail
 		if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 	     {
-		  cisResult=sendMail.sendMailDateTime(dateTime);
+		  cisResult=sendMail.sendMailDateTime(pemailId,dateTime,startTime,Pfname,Plname,apptWith,serviceType,patientId);
+		  cisResult=sendMail.sendMailDateTimeAdmin(pemailId,dateTime,startTime,Pfname,Plname,apptWith,serviceType,patientId);
+		    
 	     }
 		
 		logger.info("DigitalHealthCare:reschedulePlan BL  service" +cisResult );
